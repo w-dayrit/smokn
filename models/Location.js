@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var LocationSchema = mongoose.Schema({
-  name: Number
+  name: String,
 });
 
 module.exports = mongoose.model('Location', LocationSchema);
