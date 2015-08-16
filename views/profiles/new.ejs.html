@@ -11,9 +11,10 @@
   </head>
   <body>
     <div class="container">
+    <form>
 
       <div class="row">
-        <div class="six columns">
+        <div class="nine columns">
           <h1>My Profile</h1>
           <label for="userDescription">Tell us about yourself in 140 characters or fewer.</label>
           <textarea class="u-full-width" type="text" id="userDescription"></textarea>
@@ -21,15 +22,27 @@
       </div>
 
       <div class="row">
-        <div class="six columns">
-        <input type="text" id="dd" maxlength=2 />
-        <input type="text" id="mm" maxlength=2 />
-        <input type="text" id="yyyy" maxlength=4 />
+        <div class="nine columns">
+          <label for="userBirthday">Birthday</label>
+        </div>
       </div>
+      <div class="row">
+        <div class="three columns">
+          <label for="dd">Day</label>
+          <input type="text" id="dd" maxlength=2 />
+        </div>
+        <div class="three columns">
+          <label for="mm">Month</label>
+          <input type="text" id="mm" maxlength=2 />
+        </div>
+        <div class="three columns">
+          <label for="year">Year</label>
+          <input type="text" id="yyyy" maxlength=4 />
+        </div>
       </div>
 
       <div class="row">
-        <div class="six columns">
+        <div class="nine columns">
           <label for="userGender">I identify as a: </label>
           <select class="u-full-width" id="userGender">
             <option value="woman">Woman</option>
@@ -38,8 +51,9 @@
           </select>
         </div>
       </div>
+
       <div class="row">
-        <div class="six columns">
+        <div class="nine columns">
           <label for="matchPreference">I'm looking for a: </label>
           <select class="u-full-width" id="matchPreference">
             <option value="woman">Woman</option>
@@ -47,18 +61,34 @@
             <option value="nonBinary">Non-Binary Gender</option>
           </select>
         </div>
-        </div>
+      </div>
+
       <div class="row">
-        <div class="six columns">
+        <div class="nine columns">
           <label for="smokingCategory">I smoke: </label>
           <select class="u-full-width" id="iSmoke">
-            <option value="cigarettes">Cigarettes</option>
+            <option value="cigarette">Cigarettes</option>
             <option value="marijuana">Marijuana</option>
-            <option value="nonBinary">Non-Binary Gender</option>
+            <option value="vape">Vaporizer</option>
+            <option value="clove">Cloves</option>
+            <option value="pipe">Pipe</option>
           </select>
         </div>
+      </div>
 
+      <div class="row">
+        <div class="three columns">
+          <label for="location">Location (zip code)</label>
+            <input type="text" id="location">
+          </div>
         </div>
+
+      <div class="row">
+        <div class="three columns">
+          <label for="userPhoto">Photo URL</label>
+          <input type="text" id="userPhoto" >
+      <input class="button-primary" type="submit" value="Save">
+      </form>
       </div>
     </div>
   </body>
