@@ -1,0 +1,76 @@
+    <form>
+
+      <div class="row">
+        <div class="nine columns">
+          <h1>My Profile</h1>
+          <label for="userDescription">Tell us about yourself in 140 characters or fewer.</label>
+          <textarea class="u-full-width" type="text" id="userDescription"></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine columns">
+          <label for="userBirthday">Birthday</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="three columns">
+          <label for="dd">Day</label>
+          <input type="text" id="dd" maxlength=2 />
+        </div>
+        <div class="three columns">
+          <label for="mm">Month</label>
+          <input type="text" id="mm" maxlength=2 />
+        </div>
+        <div class="three columns">
+          <label for="year">Year</label>
+          <input type="text" id="yyyy" maxlength=4 />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine columns">
+          <label for="userGender">I identify as a: </label>
+          <select class="u-full-width" id="userGender">
+            <option value="woman">Woman</option>
+            <option value="man">Man</option>
+            <option value="nonBinary">Non-Binary Gender</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine columns">
+        <label for="matchPreference">I'm looking for: </label>
+          <input type="checkbox" value="woman"><span class="label-body">Women</label>
+          <input type="checkbox" value="man"><span class="label-body">Men</label>
+          <input type="checkbox" value="nonBinary"><span class="label-body">Non-Binary Gendered</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine columns">
+        <label for="smokingCategory">I smoke: </label>
+          <input type="checkbox" value="cigarettes"><span class="label-body">Cigarettes</label>
+          <input type="checkbox" value="marijuana"><span class="label-body">Marijuana</label>
+          <input type="checkbox" value="vaporizer"><span class="label-body">Vaporizer</label>
+          <input type="checkbox" value="cloves"><span class="label-body">Cloves</label>
+          <input type="checkbox" value="pipe"><span class="label-body">Pipes</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="three columns">
+          <label for="smokeSpot">Where's your spot?</label>
+            <input type="text" id="smokeSpot">
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="three columns">
+          <label for="userPhoto">Profile Picture URL</label>
+          <input type="text" id="userPhoto" >
+        </div>
+      </div>
+      <input class="button-primary" type="submit" value="Save">
+</form>
