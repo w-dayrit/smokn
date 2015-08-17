@@ -160,3 +160,8 @@ div#slider figure {
         margin-left: -375px;
     }
 }
+
+.fixform{
+    margin-top: 15%;
+    z-index: -1;
+}
