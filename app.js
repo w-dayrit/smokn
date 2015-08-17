@@ -6,8 +6,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 //added passport + local strategy (CM)
+var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+
 
 // var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -30,12 +32,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // auth middleware (CM)
 app.use(require('express-session')({
-    secret: 'secret',
+    secret: 'WDI Rocks',
     resave: false,
     saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 // app.use('/', routes);
 
 
@@ -49,10 +52,12 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 app.locals.title = 'Auth with Passport';
+
+
 // catch 404 and forward to error handler
 //app.use(function(req, res, next) {
 
-var mongoose = require('mongoose');
+
 mongoose.connect('mongodb://localhost/smokn');
 
 
