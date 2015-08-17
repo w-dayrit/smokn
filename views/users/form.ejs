@@ -1,8 +1,24 @@
-    <form>
+    <form action="/users" method="post" role="form">
+      <input type="hidden">
 
       <div class="row">
+        <div class="three columns">
+          <label for="email">Email</label>
+            <input type="text" id="email">
+          </div>
+      </div>
+      <div class="row">
+        <div class="three colum ns">
+          <label for="password">Password</label>
+            <input type="password" id="password">
+          </div>
+        <div class="three columns">
+          <label for="passwordConfirmation">Password Confirmation</label>
+            <input type="password" id="passwordConfirmation">
+          </div>
+      </div>
+      <div class="row">
         <div class="nine columns">
-          <h1>My Profile</h1>
           <label for="userDescription">Tell us about yourself in 140 characters or fewer.</label>
           <textarea class="u-full-width" type="text" id="userDescription"></textarea>
         </div>
@@ -10,21 +26,8 @@
 
       <div class="row">
         <div class="nine columns">
-          <label for="userBirthday">Birthday</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="three columns">
-          <label for="dd">Day</label>
-          <input type="text" id="dd" maxlength=2 />
-        </div>
-        <div class="three columns">
-          <label for="mm">Month</label>
-          <input type="text" id="mm" maxlength=2 />
-        </div>
-        <div class="three columns">
-          <label for="year">Year</label>
-          <input type="text" id="yyyy" maxlength=4 />
+          <label for="birthday">Birthday</label>
+          <input type="text" id="birthday" />
         </div>
       </div>
 
@@ -50,7 +53,7 @@
 
       <div class="row">
         <div class="nine columns">
-        <label for="smokingCategory">I smoke: </label>
+        <label for="type">I smoke: </label>
           <input type="checkbox" value="cigarettes"><span class="label-body">Cigarettes</label>
           <input type="checkbox" value="marijuana"><span class="label-body">Marijuana</label>
           <input type="checkbox" value="vaporizer"><span class="label-body">Vaporizer</label>
@@ -61,16 +64,16 @@
 
       <div class="row">
         <div class="three columns">
-          <label for="smokeSpot">Where's your spot?</label>
-            <input type="text" id="smokeSpot">
+          <label for="smokespots">Where's your spot?</label>
+            <input type="text" id="smokespots">
           </div>
         </div>
 
       <div class="row">
         <div class="three columns">
-          <label for="userPhoto">Profile Picture URL</label>
-          <input type="text" id="userPhoto" >
+          <label for="photo_url">Profile Picture URL</label>
+          <input type="text" id="photo_url" >
         </div>
       </div>
-      <input class="button-primary" type="submit" value="Save">
+      <input class="button-primary" type="submit" value="Submit">
 </form>
