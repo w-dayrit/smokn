@@ -2,7 +2,7 @@ var User = require('../models/User');
 
 // GET '/' - renders index page
 module.exports.renderUserIndex = function(req, res, next) {
-  res.render('landingpage', {title: 'SMOKN'});
+  res.render('users/index', {title: 'SMOKN'});
 };
 
 module.exports.renderUserNew = function(req, res, next) {
