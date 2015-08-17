@@ -69,6 +69,7 @@ a {
 #nav ul a{
     white-space:nowrap;
 }
+
 #nav li:hover ul{
     left:0;
 }
