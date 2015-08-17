@@ -2,7 +2,7 @@ var User = require('../models/User');
 
 // GET '/' - renders index page
 module.exports.renderUserIndex = function(req, res, next) {
-  res.render('users/index', {title: 'SMOKN'});
+  res.render('landingpage', {title: 'SMOKN'});
 };
 
 module.exports.renderUserNew = function(req, res, next) {
@@ -21,5 +21,3 @@ module.exports.renderUserCreate = function(req, res, next) {
     res.redirect('/users/' + user.id);
   })
 }
-
-
