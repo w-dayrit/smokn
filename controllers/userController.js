@@ -21,3 +21,4 @@ module.exports.renderUserCreate = function(req, res, next) {
     res.redirect('/users/' + user.id);
   })
 }
+
