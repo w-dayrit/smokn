@@ -1,3 +1,4 @@
+var passport = require('passport');
 var User = require('../models/User');
 
 // GET '/' - renders index page
@@ -6,12 +7,12 @@ module.exports.renderUserIndex = function(req, res, next) {
 };
 
 module.exports.renderUserNew = function(req, res, next) {
-  res.render('users/new', {title: 'SMOKN'});
+  res.render('auth/new', {title: 'SMOKN'});
 };
 
 module.exports.renderUserShow = function(req, res, next) {
-  User.findById(req.params.id, function(err, entry) {
-    res.render('users/show', {title: 'SMOKN', entry:entry});
+  User.findById(req.params.id, function(err, user) {
+    res.render('users/show', {title: 'SMOKN', user: user});
   });
 };
 
