@@ -6,6 +6,15 @@ var userController = require('../controllers/userController');
 var sessionsController = require('../controllers/sessionsController');
 
 
+// GET user api
+router.get('/smokn/api', function(req, res, next) {
+  User.find({}, function(err, users) {
+    if (err) res.send(err);
+
+    res.json(users);
+  })
+});
+
 // GET landing page / log in page
 router.get('/', sessionsController.renderLoginPage);
 
