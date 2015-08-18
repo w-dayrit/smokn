@@ -19,11 +19,11 @@ a {
   top: 0;
   left: 0;
   padding: 1rem;
-  height: 130px;
+  height: 80px;
 }
 
 #nav p{
-  font-size: 80px;
+  font-size: 60px;
   width: 120px;
   height: 80px;
   float: left;
@@ -34,10 +34,10 @@ a {
 #nav li{
   float: right;
   width: 120px;
-  height: 80px;
+  height: 60px;
   position:relative;
   margin-top: 20px;
-  margin-right: 100px;
+  margin-right: 50px;
   font-size: 20px;
 }
 
@@ -55,7 +55,7 @@ a {
 }
 
 #nav ul{
-
+    float: left;
     list-style:none;
     position:absolute;
     left:-9999px;
@@ -164,4 +164,9 @@ div#slider figure {
 .fixform{
     margin-top: 15%;
     z-index: -1;
+}
+
+.dropbtn{
+  width: 50px;
+  float: right;
 }
