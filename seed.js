@@ -28,8 +28,8 @@ var newUsers = [
     matchPreference: 'F',
     photo_url: 'http://colinmendelsohn.com.au/files/8413/5806/8663/e-cigarette-smoker.jpg',
     type: ['Cigarette', 'Marijuana'],
-    matches: ['55d115631285b70eed3d9c52', '55d239b7df4946a56a5703a5'],
-    smokespots: ['55d23d5d843ed2af7076af9c', '55d23f29d69936d073855138']
+    matches: [],
+    smokespots: []
   },
   {
     email: '2@email.com',
@@ -39,20 +39,23 @@ var newUsers = [
     matchPreference: 'M',
     photo_url: 'http://colinmendelsohn.com.au/files/8413/5806/8663/e-cigarette-smoker.jpg',
     type: ['Cloves', 'Cigar'],
-    matches: ['55d115631285b70eed3d9c52', '55d239b7df4946a56a5703a5'],
-    smokespots: ['55d23d5d843ed2af7076af9e', '55d23f29d69936d073855138']
+    matches: [],
+    smokespots: []
   }
 ];
 
 // promise style
+
 SmokeSpot
   .create(newSmokeSpots)
   .then(
-    function(locations) {
-      console.log(locations.length + " smokespots seeded.");
+    function(location) {
+      console.log(location.length + " smokespots seeded.");
     }, function(err) {
       console.log(err);
     });
+
+
 
 User
   .create(newUsers)
@@ -65,3 +68,4 @@ User
   .then(function() {
     mongoose.disconnect();
   });
+
