@@ -1,8 +1,11 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/smokn');
 
-var User = require('./models/User');
+var User      = require('./models/User');
 var SmokeSpot = require('./models/SmokeSpot');
+var Match     = require('./models/Match');
+
+
 // callback style
 User.remove({}, function(err) {
   if (err) console.log(err);
@@ -21,6 +24,8 @@ var newSmokeSpots = [
 
 var newUsers = [
   {
+    username: '1@email.com',
+    password: '1',
     email: '1@email.com',
     birthday: '10/18/1985',
     userDescription: '1\'s test description',
@@ -32,6 +37,8 @@ var newUsers = [
     smokespots: []
   },
   {
+    username: '2@email.com',
+    password: '2',
     email: '2@email.com',
     birthday: '10/18/1985',
     userDescription: '2\'s test description',
@@ -57,9 +64,7 @@ SmokeSpot
 
 
 
-User
-  .create(newUsers)
-  .then(
+User.create(newUsers).then(
     function(users) {
       console.log(users.length + " users seeded.");
     }, function(err) {
@@ -68,4 +73,19 @@ User
   .then(function() {
     mongoose.disconnect();
   });
+
+User.list = function() {
+  User.find({}).then(
+        function(users) {
+          users = users.map(function(user) {
+            delete user.salt;
+            delete user.hash;
+            delete user.__v;
+            return user;
+          });
+          console.log(users);
+        }, function(err) {
+          console.log(err);
+        });
+};
 
