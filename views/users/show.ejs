@@ -6,10 +6,26 @@
   <body>
     <% include ../partials/nav %>
     <div class="container">
+      <div class="profileView">
+      <div class="row">
+        <div class="six columns">
+          <img src="<%= user.photo_url %>" />
+          <h3><%= user.username %></h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="six columns">
+          <%= user.birthday %>
+          <%= user.userDescription %>
+          <%= user.type %>
+          <%= user.gender %>
+        </div>
+      </div>
       <div class="row">
         <div class="six columns">
         </div>
       </div>
+    </div>
     </div>
   </body>
 </html>

@@ -161,7 +161,15 @@ div#slider figure {
     }
 }
 
-.fixform{
-    margin-top: 15%;
-    z-index: -1;
+.container{
+    margin-top: 20%;
+/*    z-index: -1;
+*/}
+
+/* profile view */
+
+.profileView {
+  border: 1px solid black;
+  position: aboslute;
+  margin-top: 20%;
 }
