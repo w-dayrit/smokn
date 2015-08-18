@@ -1,6 +1,11 @@
-    <form action="/users" method="post" role="form">
+    <form action="/users" method="post" role="form" class="fixform">
       <input type="hidden">
-
+      <div class="row">
+        <div class="three columns">
+          <label for="email">User Name</label>
+            <input type="text" name="username" id="username">
+          </div>
+      </div>
       <div class="row">
         <div class="three columns">
           <label for="email">Email</label>
@@ -11,11 +16,7 @@
         <div class="three columns">
           <label for="password">Password</label>
             <input type="password" name="password" id="password">
-          </div>
-        <div class="three columns">
-          <label for="passwordConfirmation">Password Confirmation</label>
-            <input type="password" name="passwordConfirmation" id="passwordConfirmation">
-          </div>
+        </div>
       </div>
       <div class="row">
         <div class="nine columns">
@@ -45,22 +46,20 @@
       <div class="row">
         <div class="nine columns">
         <label for="matchPreference">I'm looking for: </label>
-          <select class="u-full-width" name="matchPreference" id="matchPreference">
-          <input type="checkbox" value="woman"><span class="label-body">Women</label>
-          <input type="checkbox" value="man"><span class="label-body">Men</label>
-          <input type="checkbox" value="nonBinary"><span class="label-body">Non-Binary Gendered</label>
+          <input type="checkbox" name="matchPreference" value="woman"><span class="label-body">Women</label>
+          <input type="checkbox" name="matchPreference" value="man"><span class="label-body">Men</label>
+          <input type="checkbox" name="matchPreference" value="nonBinary"><span class="label-body">Non-Binary Gendered</label>
         </div>
       </div>
 
       <div class="row">
         <div class="nine columns">
         <label for="type">I smoke: </label>
-          <select class="u-full-width" name="type" id="type">
-          <input type="checkbox" value="cigarettes"><span class="label-body">Cigarettes</label>
-          <input type="checkbox" value="marijuana"><span class="label-body">Marijuana</label>
-          <input type="checkbox" value="vaporizer"><span class="label-body">Vaporizer</label>
-          <input type="checkbox" value="cloves"><span class="label-body">Cloves</label>
-          <input type="checkbox" value="pipe"><span class="label-body">Pipes</label>
+          <input type="checkbox" name="type" value="cigarettes"><span class="label-body">Cigarettes</label>
+          <input type="checkbox" name="type" value="marijuana"><span class="label-body">Marijuana</label>
+          <input type="checkbox" name="type" value="vaporizer"><span class="label-body">Vaporizer</label>
+          <input type="checkbox" name="type" value="cloves"><span class="label-body">Cloves</label>
+          <input type="checkbox" name="type" value="pipe"><span class="label-body">Pipes</label>
         </div>
       </div>
 
