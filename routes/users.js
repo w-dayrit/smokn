@@ -3,16 +3,25 @@ var passport = require('passport');
 var User = require('../models/User');
 var router = express.Router();
 var userController = require('../controllers/userController');
+var sessionsController = require('../controllers/sessionsController');
 
-router.get('/', function(req, res, next) {
-  res.render('landingpage', {title: 'SMOKN'});
-});
+
+// GET landing page / log in page
+router.get('/', sessionsController.renderLoginPage);
+
+// Login user
+router.post('/',
+  passport.authenticate('local',
+  {
+    failureRedirect: '/'
+  }),
+  sessionsController.loginUser);
 
 // GET users listing
 router.get('/users/index', userController.renderUserIndex);
 
 // GET new user form
-router.get('/users/new', userController.renderUserNew);
+router.get('/auth/new', userController.renderUserNew);
 
 // GET user profile
 router.get('/users/:id', userController.renderUserShow);
