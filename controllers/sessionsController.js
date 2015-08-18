@@ -2,7 +2,7 @@ var passport = require('passport');
 var User = require('../models/User');
 
 module.exports.renderLoginPage = function(req, res) {
-  res.render('landingpage', {user: req.user});
+  res.render('auth/login', {user: req.user});
 };
 
 module.exports.loginUser = function(req, res, next) {
