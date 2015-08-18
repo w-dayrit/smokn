@@ -13,11 +13,13 @@ var UserSchema = mongoose.Schema({
 
   // embed matched users and locations
   matches: [{
-    type: mongoose.Schema.Types.ObjectId, ref: 'User'
+    type: mongoose.Schema.Types.ObjectId, ref: 'Match'
   }],
 
   smokespots: [{
-    type: mongoose.Schema.Types.ObjectId, ref: 'SmokeSpot'
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'SmokeSpot',
+    index: true
   }]
 });
 
