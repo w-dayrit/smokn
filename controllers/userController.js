@@ -17,9 +17,26 @@ module.exports.renderUserShow = function(req, res, next) {
 };
 
 module.exports.renderUserCreate = function(req, res, next) {
-  User.create(req.body.user, function(err, user) {
-    if (err) res.send('> ' + err);
-    res.redirect('/users/' + user.id);
-  })
-}
+  User.register(
+    new User({
+      username: req.body.username,
+      email: req.body.email,
+      userDescription: req.body.userDescription,
+      birthday: req.body.birthday,
+      userGender: req.body.userGender,
+      matchPreference: req.body.matchPreference,
+      type: req.body.type,
+      photo_url: req.body.photo_url
+    }), req.body.password, function(err, user) {
+    if (err) return res.render('auth/new', {user: user});
+    passport.authenticate('local')(req, res, function() {
+      req.session.save(function(err) {
+        if (err) {
+          return next(err);
+      }
+      res.redirect('/users/' + user.id);
+      });
+    });
+  });
+};
 

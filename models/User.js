@@ -7,7 +7,7 @@ var UserSchema = mongoose.Schema({
   birthday: Date,
   userDescription: String,
   userGender: String,
-  matchPreference: String,
+  matchPreference: [String],
   photo_url: String,
   type: [String],
 
