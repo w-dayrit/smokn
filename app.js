@@ -45,7 +45,7 @@ app.use(passport.session());
 
 app.use('/', users);
 app.use('/chat', chat);
-// app.use('/users', users);
+app.use('/users', users);
 
 
 // passport config (CM)
