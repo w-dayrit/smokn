@@ -4,37 +4,37 @@
       <div class="row">
         <div class="three columns">
           <label for="email">Email</label>
-            <input type="text" id="email">
+            <input type="text" name="email" id="email">
           </div>
       </div>
       <div class="row">
-        <div class="three colum ns">
+        <div class="three columns">
           <label for="password">Password</label>
-            <input type="password" id="password">
+            <input type="password" name="password" id="password">
           </div>
         <div class="three columns">
           <label for="passwordConfirmation">Password Confirmation</label>
-            <input type="password" id="passwordConfirmation">
+            <input type="password" name="passwordConfirmation" id="passwordConfirmation">
           </div>
       </div>
       <div class="row">
         <div class="nine columns">
           <label for="userDescription">Tell us about yourself in 140 characters or fewer.</label>
-          <textarea class="u-full-width" type="text" id="userDescription"></textarea>
+          <textarea class="u-full-width" type="text" name="userDescription" id="userDescription"></textarea>
         </div>
       </div>
 
       <div class="row">
         <div class="nine columns">
           <label for="birthday">Birthday</label>
-          <input type="text" id="birthday" />
+          <input type="text" name="birthday" id="birthday" />
         </div>
       </div>
 
       <div class="row">
         <div class="nine columns">
           <label for="userGender">I identify as a: </label>
-          <select class="u-full-width" id="userGender">
+          <select class="u-full-width" id="userGender" name="userGender">
             <option value="woman">Woman</option>
             <option value="man">Man</option>
             <option value="nonBinary">Non-Binary Gender</option>
@@ -45,6 +45,7 @@
       <div class="row">
         <div class="nine columns">
         <label for="matchPreference">I'm looking for: </label>
+          <select class="u-full-width" name="matchPreference" id="matchPreference">
           <input type="checkbox" value="woman"><span class="label-body">Women</label>
           <input type="checkbox" value="man"><span class="label-body">Men</label>
           <input type="checkbox" value="nonBinary"><span class="label-body">Non-Binary Gendered</label>
@@ -54,6 +55,7 @@
       <div class="row">
         <div class="nine columns">
         <label for="type">I smoke: </label>
+          <select class="u-full-width" name="type" id="type">
           <input type="checkbox" value="cigarettes"><span class="label-body">Cigarettes</label>
           <input type="checkbox" value="marijuana"><span class="label-body">Marijuana</label>
           <input type="checkbox" value="vaporizer"><span class="label-body">Vaporizer</label>
@@ -62,17 +64,17 @@
         </div>
       </div>
 
-      <div class="row">
+<!--       <div class="row">
         <div class="three columns">
           <label for="smokespots">Where's your spot?</label>
             <input type="text" id="smokespots">
           </div>
-        </div>
+        </div> -->
 
       <div class="row">
         <div class="three columns">
           <label for="photo_url">Profile Picture URL</label>
-          <input type="text" id="photo_url" >
+          <input type="text" id="photo_url" name="photo_url" >
         </div>
       </div>
       <input class="button-primary" type="submit" value="Submit">
