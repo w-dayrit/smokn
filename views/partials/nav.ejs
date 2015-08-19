@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,41 @@
        <li><a href="#">Something Else 2</a></li>
    </ul>
  </li>
+  <p>
+    <a href="/">SMOKN</a>
+  </p>
 
+  <li style= "margin: 0; padding: 0;">
+    <a href="#">
+      <img src="/images/menu.png" alt="" style="width: 60px;">
+    </a>
+
+    <ul>
+  <% if ( user ) { %>
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/about">About</a></li>
+
+        <li><a href="/users/show">Profile</a></li>
+
+        <li><a href="#">Previous Matches</a></li>
+
+        <li><a href="/logout">Log Out</a></li>
+
+          <% } else { %>
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/about">About</a></li>
+
+        <li><a href="/login">Login</a></li>
+
+          <% } %>
+
+    </ul>
+
+  </li>
 </ul>
 
 </html>
+

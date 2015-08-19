@@ -1,16 +1,13 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/smokn');
-
-var User = require('./models/User');
+console.log('mongoose connected');
+var User      = require('./models/User');
 var SmokeSpot = require('./models/SmokeSpot');
-// callback style
-User.remove({}, function(err) {
-  if (err) console.log(err);
-});
+var Match     = require('./models/Match');
 
-SmokeSpot.remove({}, function(err) {
-  if (err) console.log(err);
-});
+// SmokeSpot.remove({}, function(err) {
+//   if (err) console.log(err);
+// });
 console.log("All entries removed...");
 
 var newSmokeSpots = [
@@ -19,53 +16,45 @@ var newSmokeSpots = [
   {name: 'Pasadena, CA'}
 ];
 
-var newUsers = [
-  {
-    email: '1@email.com',
-    birthday: '10/18/1985',
-    userDescription: '1\'s test description',
-    userGender: 'M',
-    matchPreference: 'F',
-    photo_url: 'http://colinmendelsohn.com.au/files/8413/5806/8663/e-cigarette-smoker.jpg',
-    type: ['Cigarette', 'Marijuana'],
-    matches: [],
-    smokespots: []
-  },
-  {
-    email: '2@email.com',
-    birthday: '10/18/1985',
-    userDescription: '2\'s test description',
-    userGender: 'F',
-    matchPreference: 'M',
-    photo_url: 'http://colinmendelsohn.com.au/files/8413/5806/8663/e-cigarette-smoker.jpg',
-    type: ['Cloves', 'Cigar'],
-    matches: [],
-    smokespots: []
-  }
-];
+// // callback style
+// User.remove({}, function(err, entry) {
+//   if (err) console.log(err);
+//   console.log('Entries cleared');
+// });
 
-// promise style
+// var testUsers = function() {};
 
-SmokeSpot
-  .create(newSmokeSpots)
-  .then(
-    function(location) {
-      console.log(location.length + " smokespots seeded.");
-    }, function(err) {
-      console.log(err);
-    });
+// User.register(new User({
+//   username: 'coolguy45',
+//   password: 'waffles',
+//   email: 'coolguy45@email.com',
+//   birthday: '10/18/1985',
+//   userDescription: 'Nice guys finish first, always',
+//   userGender: 'M',
+//   matchPreference: 'F',
+//   photo_url: 'http://colinmendelsohn.com.au/files/8413/5806/8663/e-cigarette-smoker.jpg',
+//   type: ['Cigarette', 'Marijuana'],
+//   matches: [],
+//   smokespots: []
+// }), '123', testUsers);
 
+// User.register(new User({
+//   username: 'niceGuy2015',
+//   password: 'waffles',
+//   email: 'niceGuy2015@email.com',
+//   birthday: '10/18/1985',
+//   userDescription: 'I am really cool and my favorite animal is a tiger.',
+//   userGender: 'M',
+//   matchPreference: 'F',
+//   photo_url: 'http://colinmendelsohn.com.au/files/8413/5806/8663/e-cigarette-smoker.jpg',
+//   type: ['Cigarette', 'Marijuana'],
+//   matches: [],
+//   smokespots: []
+// }), '123', testUsers);
 
+User.create(newUser, function(err, user) {
+  if (err) console.log(err);
+  console.log('seeded!');
+});
 
-User
-  .create(newUsers)
-  .then(
-    function(users) {
-      console.log(users.length + " users seeded.");
-    }, function(err) {
-      console.log(err);
-  })
-  .then(function() {
-    mongoose.disconnect();
-  });
 

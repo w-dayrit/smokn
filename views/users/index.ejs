@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>smokn</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/skeleton.css" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <% include ../partials/head %>
   </head>
   <body>
+    <% include ../partials/nav %>
 
+      <div class="other-users" data-current-uid="91oeijf934fjp39ifjef">
+        <div class="potential-smokemate" data-uid="9u449u5495u2495u43">
+
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Ryan_Gosling_Cannes_2014.jpg">
+          <br>
+          <p>
+            Name:
+            <br>
+            Birthday:
+            <br>
+            Type:
+            <br>
+            Description:
+            <br>
+          </p>
+        </div>
+      </div>
+
+    <div class="button-wrapper">
+      <button class="dislike-button" style="clear: both;" data-status="pending">
+      thumbs down
+      </button>
+
+      <button class="like-button" data-status="dislike">
+      <3
+      </button>
+    </div>
+
+    <% include ../partials/footer %>
   </body>
 </html>
 

@@ -17,9 +17,11 @@ router.get('/smokn/users', function(req, res, next) {
 
 // GET landing page / log in page
 // router.get('/', sessionsController.renderLoginPage);
+
 router.get('/', function(req, res) {
   res.render('landingpage', {user: req.user});
 });
+
 router.get('/login', sessionsController.renderLoginPage);
 
 router.get('/login', function(req, res) {
@@ -27,12 +29,13 @@ router.get('/login', function(req, res) {
 });
 
 // Login user
-// router.post('/login',
+// router.post('/',
 //   passport.authenticate('local',
 //   {
-//     failureRedirect: '/auth/login'
+//     failureRedirect: '/'
 //   }),
 //   sessionsController.loginUser);
+
 router.post('/login', passport.authenticate(
  'local',
  {
@@ -46,6 +49,9 @@ router.post('/login', passport.authenticate(
  }
 );
 
+// GET about
+router.get('/about', userController.renderAbout);
+
 // GET users listing
 router.get('/users/index', userController.renderUserIndex);
 
@@ -55,8 +61,15 @@ router.get('/auth/new', userController.renderUserNew);
 // GET user profile
 router.get('/users/:id', userController.renderUserShow);
 
+// GET edit user profile
+router.get('/users/:id/edit', userController.renderUserEdit);
+
 // POST new user info
 router.post('/users', userController.renderUserCreate);
+
+
+// PUT update user info
+router.post('/users/show', userController.renderUserUpdate);
 
 router.get('/logout', function (req, res) {
   req.logout();
