@@ -7,7 +7,7 @@ var sessionsController = require('../controllers/sessionsController');
 
 
 // GET user api
-router.get('/smokn/api', function(req, res, next) {
+router.get('/smokn/users', function(req, res, next) {
   User.find({}, function(err, users) {
     if (err) res.send(err);
 
