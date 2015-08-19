@@ -207,13 +207,13 @@ div#slider figure {
   padding: 20px;
   margin: 0 auto;
   text-align: center;
-  width: 80%;
+  width: 60%;
   margin-top: 5%;
 }
 
 .potential-smokemate img{
-  height: 80%;
-  width: 100%;
+  height: 50%;
+  width: 50%;
   margin-left: 0;
 }
 
@@ -232,8 +232,8 @@ div#slider figure {
 }
 
 .button-wrapper input{
-  width: 20%;
-  height: 20%;
+  width: 10%;
+  height: 10%;
 }
 
 .nocig{

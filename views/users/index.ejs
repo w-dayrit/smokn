@@ -9,7 +9,9 @@
       <div class="other-users" data-current-uid="91oeijf934fjp39ifjef">
         <div class="potential-smokemate" data-uid="9u449u5495u2495u43">
         <% users.forEach(function(user){ %>
-          <img src=<%= user.photo_url %>>
+          <div>
+            <img src=<%= user.photo_url %>>
+          </div>
           <div class="smokemate-text">
             <%= user.username %>,
             <%= new Date().getFullYear() - new Date (user.birthday).getFullYear() %>
@@ -24,13 +26,14 @@
               <br>
             </p>
           </div>
-          <% }); %>
           <div class="button-wrapper">
             <input class="nocig" type="image" src="/images/nocig.jpg" data-status="dislike">
             </input>
             <input class="yescig" type="image" src="/images/cigyes.jpg" data-status="pending">
             </input>
           </div>
+          </div>
+          <% }); %>
         </div>
       </div>
 
