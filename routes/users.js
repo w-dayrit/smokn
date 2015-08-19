@@ -49,27 +49,29 @@ router.post('/login', passport.authenticate(
  }
 );
 
-// GET about
+
+// show about page
 router.get('/about', userController.renderAbout);
 
-// GET users listing
+// USER CRUD FUNCTIONS
+
+// show all the users (or one random user)
 router.get('/users/index', userController.renderUserIndex);
 
-// GET new user form
+// render new user form
 router.get('/auth/new', userController.renderUserNew);
 
-// GET user profile
-router.get('/users/:id', userController.renderUserShow);
-
-// GET edit user profile
-router.get('/users/:id/edit', userController.renderUserEdit);
-
-// POST new user info
+// create new user
 router.post('/users', userController.renderUserCreate);
 
+// show user profile
+router.get('/users/:id', userController.renderUserShow);
 
-// PUT update user info
-router.post('/users/show', userController.renderUserUpdate);
+// render edit user form
+router.get('/users/:id/edit', userController.renderUserEdit);
+
+// edit user info
+router.put('/users/:id', userController.editUser);
 
 router.get('/logout', function (req, res) {
   req.logout();
