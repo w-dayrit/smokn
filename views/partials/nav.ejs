@@ -12,23 +12,20 @@
     <a href="/">SMOKN</a>
   </p>
 
-  <li>
+  <li style= "margin: 0; padding: 0;">
     <a href="#">
       <img src="/images/menu.png" alt="" style="width: 60px;">
     </a>
 
-
-  <% if ( user ) { %>
     <ul>
+  <% if ( user ) { %>
         <li><a href="/">Home</a></li>
 
-        <li><a href="#">About</a></li>
+        <li><a href="/about">About</a></li>
 
-        <li><a href="#">Profile</a></li>
+        <li><a href="/users/show">Profile</a></li>
 
         <li><a href="#">Previous Matches</a></li>
-
-        <li><a href="/users/edit">Edit Profile</a></li>
 
         <li><a href="/logout">Log Out</a></li>
 
@@ -36,7 +33,9 @@
 
         <li><a href="/">Home</a></li>
 
-        <li><a href="/">About</a></li>
+        <li><a href="/about">About</a></li>
+
+        <li><a href="/login">Login</a></li>
 
           <% } %>
 

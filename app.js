@@ -41,6 +41,16 @@ app.use(require('express-session')({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+// middleware to make sure a user is logged in (CM)
+function isLoggedIn(req, res, next) {
+  // if user is authenticated in the session, carry on
+  if (req.isAuthenticated())
+    return next();
+  // if they aren't redirect them to the login page
+  res.redirect('/login');
+}
+
 // app.use('/', routes);
 
 
