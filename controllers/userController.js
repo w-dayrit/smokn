@@ -7,7 +7,7 @@ module.exports.renderUserIndex = function(req, res, next) {
 };
 
 module.exports.renderUserNew = function(req, res, next) {
-  res.render('auth/new', {title: 'SMOKN'});
+  res.render('auth/new', {title: 'SMOKN', user: req.user});
 };
 
 module.exports.renderUserShow = function(req, res, next) {
