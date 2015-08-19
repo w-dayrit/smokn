@@ -6,45 +6,86 @@ var Match = function(userOne, userTwo, status) {
   this.status  = status;
 };
 
-$buttonUp = $('body > div.other-users > div > button:nth-child(3)');
+$.ajax({
+method:   "GET",
+url:      "http://localhost:3000/smokn/users",
+dataType: "json",
+})
+.success(function(data) {
+  var oneUser = data.filter(function(user){
+    return user.username === '2';
+  })
+  console.log(oneUser[0].photo_url);
+  console.log(oneUser[0]._id);
 
-  $buttonUp.on('click', function(e) {
-    // console.log($(this).data('status'));
-    // console.log($(this).parent().data('uid'));
-    // console.log($(this).parent().parent().data('current-uid'));
 
-    var userOne = $(this).parent().data('uid');
-    console.log(userOne);
-    var userTwo = $(this).parent().parent().data('current-uid');
-    console.log(userTwo);
-    var status = $(this).data('status');
-    console.log(status);
+  $('#userPic').prepend('<img src="http://colinmendelsohn.com.au/files/8413/5806/8663/e-cigarette-smoker.jpg" height="300"/>');
+  $('.potential-smokemate').attr("data-uid", oneUser[0]._id);
+})
+.fail(function(err) {
+  console.log(err);
+});
 
-    var match = new Match(userOne, userTwo, status);
-    console.log(match);
-    var str = $.param(match);
-    console.log(str);
 
-    $.ajax({
-      method:   "POST",
-      url:      "http://localhost:3000/smokn/matches",
-      data:     JSON.stringify({
-        match: {
-          userOne: userOne,
-          userTwo:userTwo,
-          status: status
-        }
-      }),
-      contentType: 'application/json'
+// Creates Match object with hidden data, POSTs to Matches API
+$dislike = $('body > div.other-users > div > button:nth-child(3)');
+
+$dislike.on('click', function(e) {
+  // console.log($(this).data('status'));
+  // console.log($(this).parent().data('uid'));
+  // console.log($(this).parent().parent().data('current-uid'));
+
+  var userOne = $(this).parent().parent().data('current-uid');
+  var userTwo = $(this).parent().data('uid');
+  var status = $(this).data('status');
+
+  $.ajax({
+    method:   "POST",
+    url:      "http://localhost:3000/smokn/matches",
+    data:     JSON.stringify({
+      match: {
+        userOne: userOne,
+        userTwo: userTwo,
+        status: status
+      }
+    }),
+    contentType: 'application/json'
+  })
+    .success(function(data) {
+      console.log('Created Match: ', data);
     })
-      .success(function(data) {
-        console.log('Created Match: ', data);
-      })
-      .fail(function(err) {
-        console.log(err);
-      });
-  });
+    .fail(function(err) {
+      console.log(err);
+    });
+});
 
+
+$like = $('body > div.other-users > div > button:nth-child(4)');
+
+$like.on('click', function(e) {
+  var userOne = $(this).parent().parent().data('current-uid');
+  var userTwo = $(this).parent().data('uid');
+  var status = $(this).data('status');
+
+  $.ajax({
+    method:   "POST",
+    url:      "http://localhost:3000/smokn/matches",
+    data:     JSON.stringify({
+      match: {
+        userOne: userOne,
+        userTwo: userTwo,
+        status: status
+      }
+    }),
+    contentType: 'application/json'
+  })
+    .success(function(data) {
+      console.log('Created Match: ', data);
+    })
+    .fail(function(err) {
+      console.log(err);
+    });
+});
 
 
 
