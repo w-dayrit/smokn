@@ -6,8 +6,9 @@
   <body>
     <% include ../partials/nav %>
     <div class="container">
+      <h1>Edit Profile</h1>
 
-    <form action="/users/show" method="post" role="form" class="fixform">
+    <form action="/users/<%= user.id %>?_method=PUT" method="POST" role="form" class="fixform">
       <input type="hidden">
       <div class="row">
         <div class="three columns">
@@ -80,7 +81,8 @@
           <input type="text" id="photo_url" name="photo_url" value="<%= user.photo_url %>" >
         </div>
       </div>
-      <input class="button-primary" type="submit" value="Submit">
+      <button class="button-primary" type="submit" name="action">Update</button>
+      <button class="button-danger" type="submit" name="action">Delete</button>
 </form>
 
 
