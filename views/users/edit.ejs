@@ -6,7 +6,82 @@
   <body>
     <% include ../partials/nav %>
     <div class="container">
-      <% include form %>
+
+    <form action="/users/show" method="post" role="form" class="fixform">
+      <input type="hidden">
+      <div class="row">
+        <div class="three columns">
+          <label for="email">User Name</label>
+            <input type="text" name="username" id="username" value="<%= user.username %>">
+          </div>
+      </div>
+      <div class="row">
+        <div class="three columns">
+          <label for="email">Email</label>
+            <input type="text" name="email" id="email" value="<%= user.email %>">
+          </div>
+      </div>
+      <div class="row">
+        <div class="nine columns">
+          <label for="userDescription">Tell us about yourself in 140 characters or fewer.</label>
+          <textarea class="u-full-width" type="text" name="userDescription" id="userDescription">userDescription</textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine columns">
+          <label for="birthday">Birthday</label>
+          <input type="text" name="birthday" id="birthday" value="<%= user.birthday %>" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine columns">
+          <label for="userGender">I identify as a: </label>
+          <select class="u-full-width" id="userGender" name="userGender" value="<%= user.userGender %>">
+            <option value="woman">Woman</option>
+            <option value="man">Man</option>
+            <option value="nonBinary">Non-Binary Gender</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine columns">
+        <label for="matchPreference">I'm looking for: </label>
+          <input type="checkbox" name="matchPreference" value="woman"><span class="label-body">Women</label>
+          <input type="checkbox" name="matchPreference" value="man"><span class="label-body">Men</label>
+          <input type="checkbox" name="matchPreference" value="nonBinary"><span class="label-body">Non-Binary Gendered</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine columns">
+        <label for="type">I smoke: </label>
+          <input type="checkbox" name="type" value="cigarettes"><span class="label-body">Cigarettes</label>
+          <input type="checkbox" name="type" value="marijuana"><span class="label-body">Marijuana</label>
+          <input type="checkbox" name="type" value="vaporizer"><span class="label-body">Vaporizer</label>
+          <input type="checkbox" name="type" value="cloves"><span class="label-body">Cloves</label>
+          <input type="checkbox" name="type" value="pipe"><span class="label-body">Pipes</label>
+        </div>
+      </div>
+
+<!--       <div class="row">
+        <div class="three columns">
+          <label for="smokespots">Where's your spot?</label>
+            <input type="text" id="smokespots">
+          </div>
+        </div> -->
+
+      <div class="row">
+        <div class="three columns">
+          <label for="photo_url">Profile Picture URL</label>
+          <input type="text" id="photo_url" name="photo_url" <%= user.photo_url %>">>
+        </div>
+      </div>
+      <input class="button-primary" type="submit" value="Submit">
+</form>
+
 
 
 
