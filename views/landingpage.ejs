@@ -17,7 +17,7 @@
       </figure>
     </div>
 
-    <form class="login_form">
+<!--     <form action="/" method="post" class="login_form">
       <p>User Login</p>
       <div class="row">
         <div class="twelve columns">
@@ -27,16 +27,25 @@
         <br>
         <div class="twelve columns">
 
-          <input class="u-full-width" type="email" placeholder="password" id="password">
+          <input class="u-full-width" type="password" placeholder="password" id="password">
         </div>
       </div>
-      <input class="button-primary" type="submit" value="Log In">
+      <input class="button-primary" type="submit" value="Login"> -->
       <div>
-        <p>Not a member?</p>
+        <a class="button button-primary" href="/auth/login">Login</a>
         <a class="button button-primary" href="/users/new">Sign Up</a>
       </div>
 
     </form>
+    <div class="container">
+          <% if (user) { %>
+            <p>You are currently logged in as<br><strong><%= user.username %></strong></p>
+            <a href="/logout" class="btn btn-danger">Logout</a>
+          <% } else { %>
+            <a href="/login" class="btn btn-primary">paulaLogin</a>
+            <a href="/auth/new" class="btn btn-info">Register</a>
+          <% } %>
+    </div>
 
     <% include partials/footer %>
 
