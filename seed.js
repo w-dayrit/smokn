@@ -50,21 +50,9 @@ var newUsers = [
     smokespots: []
   }
 ];
-
-// promise style
-
-SmokeSpot
-  .create(newSmokeSpots)
+User
+  .create(newUsers)
   .then(
-    function(location) {
-      console.log(location.length + " smokespots seeded.");
-    }, function(err) {
-      console.log(err);
-    });
-
-
-
-User.create(newUsers).then(
     function(users) {
       console.log(users.length + " users seeded.");
     }, function(err) {
@@ -73,19 +61,3 @@ User.create(newUsers).then(
   .then(function() {
     mongoose.disconnect();
   });
-
-User.list = function() {
-  User.find({}).then(
-        function(users) {
-          users = users.map(function(user) {
-            delete user.salt;
-            delete user.hash;
-            delete user.__v;
-            return user;
-          });
-          console.log(users);
-        }, function(err) {
-          console.log(err);
-        });
-};
-
