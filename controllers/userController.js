@@ -35,21 +35,21 @@ module.exports.renderUserEdit = function(req, res, next) {
 
 //change routes, render profile page after revisions. (save to profile and return to profile)
 //CM redirects to show but doesn't update in db
-module.exports.renderUserUpdate = function(req, res, next) {
-  User.update(
-      {
-      email: req.body.email,
-      userDescription: req.body.userDescription,
-      birthday: req.body.birthday,
-      userGender: req.body.userGender,
-      matchPreference: req.body.matchPreference,
-      type: req.body.type,
-      photo_url: req.body.photo_url
-    }, function(err, user) {
-    if (err) return res.json({message: 'error:' + err});
-      res.redirect('/users/show');
-      })
-  }
+// module.exports.renderUserUpdate = function(req, res, next) {
+//   User.update(
+//       {
+//       email: req.body.email,
+//       userDescription: req.body.userDescription,
+//       birthday: req.body.birthday,
+//       userGender: req.body.userGender,
+//       matchPreference: req.body.matchPreference,
+//       type: req.body.type,
+//       photo_url: req.body.photo_url
+//     }, function(err, user) {
+//     if (err) return res.json({message: 'error:' + err});
+//       res.redirect('/users/show');
+//       })
+//   }
 
 
 module.exports.renderUserCreate = function(req, res, next) {
@@ -73,6 +73,37 @@ module.exports.renderUserCreate = function(req, res, next) {
       res.redirect('/users/' + user.id);
       });
     });
+  });
+};
+
+module.exports.editUser = function(req, res, next) {
+  var id = req.params.id;
+  User.findById(req.params.id, function (err, user) {
+    if (err) res.json({message: 'could not find user'});
+
+    user.username = req.body.username;
+    user.email = req.body.email;
+    user.userDescription = req.body.userDescription;
+    user.birthday = req.body.birthday;
+    user.userGender = req.body.userGender;
+    user.matchPreference = req.body.matchPreference;
+    user.type = req.body.type;
+    user.photo_url = req.body.photo_url;
+
+    req.user.save(function(err) {
+      if (err) {
+        return next(err);
+      }
+      res.redirect('/users/' + user.id);
+    });
+  });
+};
+
+module.exports.deleteUser = function(req, res, next) {
+  var user = req.user;
+  user.remove(function (err) {
+    req.flash('info', 'deleted profile');
+    res.redirect('/');
   });
 };
 
