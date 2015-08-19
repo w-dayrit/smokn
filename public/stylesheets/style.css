@@ -18,9 +18,8 @@ a {
   right: 0;
   top: 0;
   left: 0;
-  padding: 1rem;
-  height: 80px;
-  margin-bottom: -2.5rem;
+  height: 86px;
+  margin-bottom: -8%;
 }
 
 #nav p{
@@ -194,32 +193,63 @@ div#slider figure {
 
 /* Users View */
 
+/* Users/Index */
+
 .other-users{
   text-align: center;
   margin-top: 5%;
+  margin-right: 0;
+  background-color: #FCEADE;
 }
 
 .potential-smokemate{
-  border: 1px solid black;
   display: inline-block;
   padding: 20px;
   margin: 0 auto;
   text-align: center;
+  width: 80%;
+  margin-top: 5%;
 }
 
 .potential-smokemate img{
-  height: 200px;
+  height: 80%;
+  width: 100%;
+  margin-left: 0;
 }
 
 .dislike-button{
+  float: left;
+  background-color: #00CC00;
 }
 
 .like-button{
-  color: red;
   float: right;
+  background-color: #6699FF;
 }
 
 .button-wrapper{
-
   margin: 5% 10%;
+}
+
+.button-wrapper input{
+  width: 20%;
+  height: 20%;
+}
+
+.nocig{
+  float: left;
+}
+
+.yescig{
+  float: right;
+}
+
+.smokemate-text{
+  color: #2B2D42;
+  font-size: 30px;
+}
+
+.smokemate-text-two{
+  font-size: 20px;
+  margin-top: 5%;
 }

@@ -5,36 +5,42 @@
   </head>
   <body>
     <% include ../partials/nav %>
-
+    <p><%= title %></p>
       <div class="other-users" data-current-uid="91oeijf934fjp39ifjef">
         <div class="potential-smokemate" data-uid="9u449u5495u2495u43">
+        <% users.forEach(function(user){ %>
+          <img src=<%= user.photo_url %>>
+          <div class="smokemate-text">
+            <%= user.username %>,
+            <%= new Date().getFullYear() - new Date (user.birthday).getFullYear() %>
+          </div>
+          <div class="smokemate-text-two">
+            <p>
+              Type:
+              <%= user.type %>
+              <br>
+              Description:
+              <%= user.userDescription %>
+              <br>
+            </p>
+          </div>
+          <% }); %>
+          <div class="button-wrapper">
+            <input class="nocig" type="image" src="/images/nocig.jpg">
+            </input>
+            <input class="yescig" type="image" src="/images/cigyes.jpg">
+            </input>
 
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Ryan_Gosling_Cannes_2014.jpg">
-          <br>
-          <p>
-            Name:
-            <br>
-            Birthday:
-            <br>
-            Type:
-            <br>
-            Description:
-            <br>
-          </p>
+<!--             <button class="dislike-button" style="clear: both;" data-status="pending">
+
+            </button> -->
+<!--             <button class="like-button" data-status="dislike">
+
+            </button> -->
+          </div>
         </div>
       </div>
 
-    <div class="button-wrapper">
-      <button class="dislike-button" style="clear: both;" data-status="pending">
-      thumbs down
-      </button>
-
-      <button class="like-button" data-status="dislike">
-      <3
-      </button>
-    </div>
-
-    <% include ../partials/footer %>
   </body>
 </html>
 
