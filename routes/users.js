@@ -1,4 +1,4 @@
-var express = require('express');
+  var express = require('express');
 var passport = require('passport');
 var User = require('../models/User');
 var router = express.Router();
@@ -16,35 +16,15 @@ router.get('/smokn/api', function(req, res, next) {
 });
 
 // GET landing page / log in page
-// router.get('/', sessionsController.renderLoginPage);
-router.get('/', function(req, res) {
-  res.render('landingpage', {user: req.user});
-});
-router.get('/login', sessionsController.renderLoginPage);
-
-router.get('/login', function(req, res) {
-  res.render('auth/login', {user : req.user });
-});
+router.get('/', sessionsController.renderLoginPage);
 
 // Login user
-// router.post('/login',
-//   passport.authenticate('local',
-//   {
-//     failureRedirect: '/auth/login'
-//   }),
-//   sessionsController.loginUser);
-router.post('/login', passport.authenticate(
- 'local',
- {
-   failureRedirect: '/login'
- }),
- function (req, res, next) {
-   req.session.save(function (err) {
-     if (err) return next(err);
-     res.redirect('/');
-   });
- }
-);
+router.post('/',
+  passport.authenticate('local',
+  {
+    failureRedirect: '/'
+  }),
+  sessionsController.loginUser);
 
 // GET users listing
 router.get('/users/index', userController.renderUserIndex);
@@ -57,11 +37,6 @@ router.get('/users/:id', userController.renderUserShow);
 
 // POST new user info
 router.post('/users', userController.renderUserCreate);
-
-router.get('/logout', function (req, res) {
-  req.logout();
-  res.redirect('/');
-});
 
 
 module.exports = router;
