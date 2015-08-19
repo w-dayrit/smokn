@@ -24,7 +24,7 @@
       <div class="row">
         <div class="nine columns">
           <label for="userDescription">Tell us about yourself in 140 characters or fewer.</label>
-          <textarea class="u-full-width" type="text" name="userDescription" id="userDescription">userDescription</textarea>
+          <textarea class="u-full-width" type="text" name="userDescription" id="userDescription"><%= user.userDescription %></textarea>
         </div>
       </div>
 
@@ -75,8 +75,9 @@
 
       <div class="row">
         <div class="three columns">
+          <img src="<%= user.photo_url %>" width="300" />
           <label for="photo_url">Profile Picture URL</label>
-          <input type="text" id="photo_url" name="photo_url" <%= user.photo_url %>">>
+          <input type="text" id="photo_url" name="photo_url" value="<%= user.photo_url %>" >
         </div>
       </div>
       <input class="button-primary" type="submit" value="Submit">
