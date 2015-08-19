@@ -6,6 +6,30 @@
   <body>
     <% include ../partials/nav %>
 
+      <div class="other-users" data-current-uid="91oeijf934fjp39ifjef">
+        <div class="potential-smokemate" data-uid="9u449u5495u2495u43">
+
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Ryan_Gosling_Cannes_2014.jpg" height="300">
+          <br>
+        </div>
+        <% users.forEach(function(user){ %>
+          <%= user.birthday %>
+          <%= user.userDescription %>
+          <%= user.matchPreference %>
+          <%= user.type %>
+        <% }); %>
+      </div>
+
+    <div class="button-wrapper">
+      <button class="dislike-button" style="clear: both;" data-status="pending">
+      thumbs down
+      </button>
+
+      <button class="like-button" data-status="dislike">
+      <3
+      </button>
+    </div>
+
     <% include ../partials/footer %>
   </body>
 </html>

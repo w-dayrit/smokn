@@ -3,8 +3,16 @@ var User = require('../models/User');
 
 // GET '/' - renders index page
 module.exports.renderUserIndex = function(req, res, next) {
+  User.find({}, function(err, users){
+    res.render('users/index', {title: 'SMOKN', users: users});
+  })
   res.render('users/index', {title: 'SMOKN'});
 };
+
+// module.exports.renderUserIndex = function(req, res, next) {
+//   res.render('users/index', {title: 'SMOKN'});
+// };
+
 
 module.exports.renderUserNew = function(req, res, next) {
   res.render('auth/new', {title: 'SMOKN'});
