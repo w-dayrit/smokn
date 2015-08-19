@@ -14,6 +14,7 @@ var LocalStrategy = require('passport-local').Strategy;
 // var routes = require('./routes/index');
 var users = require('./routes/users');
 var chat = require('./routes/chat');
+var matches = require('./routes/matches');
 
 var app = express();
 
@@ -43,9 +44,10 @@ app.use(passport.session());
 // app.use('/', routes);
 
 
-app.use('/', users);
 app.use('/chat', chat);
 app.use('/users', users);
+app.use('/', users);
+app.use('/', matches);
 
 
 // passport config (CM)
