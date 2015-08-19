@@ -244,12 +244,18 @@ div#slider figure {
   float: right;
 }
 
-.smokemate-text{
+/*.smokemate-text{
   color: #2B2D42;
   font-size: 30px;
+  font-family: 'Oleo Script', Helvetica, sans-serif;
 }
 
 .smokemate-text-two{
   font-size: 20px;
   margin-top: 5%;
-}
+  background-color: #F0544F;
+  width: 70%;
+  height: 70%;
+  margin-left: 15%;
+  border-radius: 20px;
+}*/
