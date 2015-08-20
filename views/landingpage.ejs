@@ -17,25 +17,21 @@
       </figure>
     </div>
 
-<!--       <div>
-        <a class="button button-primary" href="/auth/login">Login</a>
-        <a class="button button-primary" href="/users/new">Sign Up</a>
-      </div> -->
-
  </form>
-   <div class="container" id="login">
           <% if (user) { %>
-            <p>You are currently logged in as<br><strong><%= user.username %></strong></p>
-            <div style="width:100%; height:100%">
-            <a href="/logout" class="btn btn-danger">Logout</a>
-            </div>
+            <div class="container registerform">
+            <p class="raleway centerugh">You are currently logged in as <strong><%= user.username %></strong>.</p>
+            <a class="button landing" href="/logout">logout</a>
+          </div>
           <% } else { %>
-          <a class="button" href="login">LOGIN</a>
-          <a class="button" href="/auth/new">REGISTER</a>
+       <div class="login">
+          <img src="/images/plain_logo.png" class="intrologo" />
+          <a class="button landing" href="login">login</a>
+          <a class="button landing" href="/auth/new">register</a>
+              </div>
+
           <% } %>
-    </div>
 
-    <% include partials/footer %>
-
+</div>
   </body>
 </html>

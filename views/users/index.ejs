@@ -6,9 +6,8 @@
   <body>
 
     <% include ../partials/nav %>
-    <p><%= title %></p>
-
-
+    <p></p>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div id="current-user" data-current-uid=<%= user._id %>
       data-current-pref=<%= user.matchPreference[0] %><%= user.matchPreference[1] %><%= user.matchPreference[2] %>>
       <div class="other-users" style="text-align: center;">
@@ -20,12 +19,12 @@
             text-align: center;">
             <img id="userPic" src="">
             <br>
-            <button style="clear: both;" data-status="dislike">
-            thumbs down
+            <button style="clear: both;" class="likebutton" data-status="dislike">
+            nope
             </button>
 
-            <button data-status="pending">
-            Like
+            <button style="clear: both;" class="likebutton" data-status="pending">
+            smokn
             </button>
           </div>
       </div>

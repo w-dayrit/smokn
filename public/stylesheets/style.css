@@ -7,23 +7,40 @@ a {
   color: #00B7FF;
 }
 
-/* nav */
+.label-body {
+  margin: 5px;
+}
 
+.centerugh {
+  text-align: center;
+}
+
+
+#userPic {
+  width: 300px;
+  height: auto;
+  margin: 10px;
+}
+
+.registerform {
+  margin-top: 15%;
+}
+
+.specialuser {
+  float: left;
+  margin-top: 200px;
+}
 /*cm*/
 
-.button {
-  -webkit-border-radius: 11;
-  -moz-border-radius: 11;
-  border-radius: 11px;
-  font-family: Helvetica;
+.landing {
   color: #000000;
-  font-size: 20px;
   background: #ffffff;
-  padding: 10px 20px 10px 20px;
+  width: 150px;
   text-align: center;
-  vertical-align:center;
-  background-color:#FFFFF;
-  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .button:hover {
@@ -31,11 +48,33 @@ a {
   text-decoration: none;
 }
 
-#login {
-  position: relative;
-  padding-left: 20px;
+.login {
+  margin-top: 30%;
+  display: block;
 }
 
+.mycontainer {
+  margin: 0 auto;
+  margin-top: 30%;
+}
+
+img.intrologo {
+  margin: 0 auto;
+  height: 200px;
+  display: block;
+}
+
+img.navimg {
+  margin-top: 5%;
+}
+
+.raleway {
+  font-family: 'Raleway', sans-serif;
+}
+
+.likebutton {
+  width: 150px;
+}
 
 
 #nav{
@@ -49,6 +88,7 @@ a {
   left: 0;
   height: 86px;
   margin-bottom: -8%;
+  opacity: 0.4;
 }
 
 #nav p{
@@ -61,15 +101,16 @@ a {
 
 #nav li{
   float: right;
-  width: 200px;
+  width: 130px;
   height: 60px;
   position:relative;
   margin-top: 20px;
-  margin-right: 50px;
+  margin-right: 75px;
   font-size: 20px;
 }
 
 #nav a{
+    font-family: 'Raleway', sans-serif;
     display:block;
     padding:5px;
     color:#fff;
@@ -92,7 +133,7 @@ a {
     margin: 0px;
     background-color: black;
     margin-top: 80px;
-    height: 600px;
+    height: 350px;
     width: 100%;
     transition: all 0.5s ease 1s;
 }
@@ -105,7 +146,7 @@ a {
     margin: 0px;
     background-color: black;
     margin-top: 80px;
-    height: 600px;
+    height: 350px;
     transition: all 0.5s ease 0s;
 }
 
@@ -207,11 +248,6 @@ div#slider figure {
     }
 }
 
-.container{
-    margin-top: 20%;
-    margin-bottom: 20%;
-/*    z-index: -1;
-*/}
 
 /* profile view */
 
@@ -263,7 +299,7 @@ div#slider figure {
   margin-left: 0;
 }
 
-.dislike-button{
+/*.dislike-button{
   float: left;
   background-color: #00CC00;
 }
@@ -271,7 +307,7 @@ div#slider figure {
 .like-button{
   float: right;
   background-color: #6699FF;
-}
+}*/
 
 .button-wrapper{
   margin: 5% 10%;
@@ -312,7 +348,5 @@ div#slider figure {
   color: white;
 }
 
-iframe {
-  float: right;
-}
+
 
