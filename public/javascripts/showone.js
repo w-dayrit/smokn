@@ -105,6 +105,9 @@ $dislike.on('click', function(e) {
   // console.log($(this).parent().data('uid'));
   // console.log($(this).parent().parent().parent().data('current-uid'));
 
+
+  // logic to check if match is existing
+
   var userOne = $(this).parent().parent().parent().data('current-uid');
   var userTwo = $(this).parent().data('uid');
   var status = $(this).data('status');
