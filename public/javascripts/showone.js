@@ -17,7 +17,7 @@ dataType: "json",
 })
 .success(function(data) {
   var userlist = data.filter(function(user){
-    return user.username === '2';
+    return user.username === '1';
   })
 
   console.log(userlist[0].photo_url);
@@ -27,8 +27,6 @@ dataType: "json",
   // console.log(oneUser[0]._id);
 
   $('#userPic').attr('src', $('#userPic').attr('src') + userPhoto);
-
-  // $('#userPic').prepend('<img src=userPhoto height="300"/>');
   $('.potential-smokemate').attr("data-uid", userlist[0]._id);
 })
 .fail(function(err) {
