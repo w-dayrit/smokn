@@ -6,13 +6,13 @@ var Message = require('../models/Message');
 // GET '/' - renders index page
 module.exports.renderUserIndex = function(req, res, next) {
   User.find({}, function(err, users){
-    res.render('users/index', {title: 'SMOKN', users: users, user: req.user});
+    res.render('users/index', {users: users, user: req.user});
   })
 };
 
 
 module.exports.renderUserNew = function(req, res, next) {
-  res.render('auth/new', {title: 'SMOKN', user: req.user});
+  res.render('auth/new', {user: req.user});
 };
 
 module.exports.renderUserShow = function(req, res, next) {
@@ -21,17 +21,17 @@ module.exports.renderUserShow = function(req, res, next) {
                         {$and: [{sender: userTwo.username}, {receiver: req.user.username}]}]},
                         function(err, messages) {
                           res.render('users/show', {title: 'SMOKN', user: userTwo, userOne: req.user, messages: messages});
-                        })
+                        });
   });
 };
 
 module.exports.renderAbout = function(req, res, next) {
-  res.render('users/about', {title: 'About SMOKN', user: req.user});
+  res.render('users/about', {user: req.user});
 };
 
 module.exports.renderUserEdit = function(req, res, next) {
   User.findById(req.params.id, function(err, user) {
-    res.render('users/edit', {title: 'SMOKN', user: req.user});
+    res.render('users/edit', {user: req.user});
   });
 };
 
