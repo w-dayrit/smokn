@@ -7,6 +7,7 @@
 
     <% include ../partials/nav %>
     <p><%= title %></p>
+    <br><br><br><br><br>
 
 
     <div id="current-user" data-current-uid=<%= user._id %>
@@ -19,6 +20,8 @@
             margin: 0 auto;
             text-align: center;">
             <img id="userPic" src="">
+            <br>
+            <div id="potential-smokemate-name"></div>
             <br>
             <button style="clear: both;" data-status="dislike">
             thumbs down

@@ -72,6 +72,44 @@
     </div>
 
 
+  <!-- Socket IO Chat script -->
+  <script>
+
+  var me = <%=  user.username %>;
+  var otherUser = <%= otherUser.username %>;
+
+  function getNamespace(me, otherUser) {
+    if( me < otherUser) {
+      return '/' + me + '|' + otherUser;
+    } else {
+      return '/' | otherUser + '|' + me;
+  };
+
+  var ns = getNamespace();
+
+  var chatSocket = io(ns);
+  var socket = io();
+  socket.emit('register-chat', ns);
+
+  chatSocket.on("private-message", function(data) {
+    // update UI with message
+    // ajax API post to chat model
+
+  })
+
+  function sendMessage (message) {
+    chatSocket.emit("private-message", {
+      sender: me,
+      receiver: otherUser,
+      message: message
+    });
+  };
+
+  // all available client side
+  </script>
+
+
+
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
     <script src="../../socket.io/socket.io.js"></script>

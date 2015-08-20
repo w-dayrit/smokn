@@ -91,6 +91,7 @@ dataType: "json",
 
   $('#userPic').attr('src', $('#userPic').attr('src') + userPhoto);
   $('.potential-smokemate').attr("data-uid", oneUser._id);
+  $('#potential-smokemate-name').html(oneUser.username);
 })
 .fail(function(err) {
   console.log(err);
