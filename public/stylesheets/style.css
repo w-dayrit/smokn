@@ -178,7 +178,7 @@ div#slider figure {
 }
 
 .chat_container{
-  margin: 10% 30%;
+  height: 100px;
 }
 
 .footer{
@@ -197,9 +197,8 @@ div#slider figure {
 
 .other-users{
   text-align: center;
-  margin-top: 5%;
+  margin-top: -5%;
   margin-right: 0;
-  background-color: #FCEADE;
 }
 
 .potential-smokemate{
@@ -207,12 +206,11 @@ div#slider figure {
   padding: 20px;
   margin: 0 auto;
   text-align: center;
-  margin-top: 5%;
+  margin-top: 7%;
 }
 
 .potential-smokemate img{
-  height: 300px;
-  width: 500px;
+  height: 100px;
   margin-left: 0;
 }
 
@@ -245,8 +243,7 @@ div#slider figure {
 
 .smokemate-text{
   color: #2B2D42;
-  font-size: 30px;
-  font-family: 'Oleo Script', Helvetica, sans-serif;
+  font-size: 15px;
 }
 
 .smokemate-text-left{

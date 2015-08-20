@@ -7,16 +7,36 @@
   </head>
   <body>
     <% include ../partials/nav %>
-    <div class="chat_container">
-      <ul id="messages">
-        <div class="profilepic">
-        </div>
-      </ul>
-    </div>
 
-    <form class="chatform" action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+      <section class="module">
+
+        <div>
+          <header class="top-bar">
+            <div class="left">
+              <span class="icon typicons-message"></span>
+              <h1>Chat</h1>
+            </div>
+
+            <div class="right">
+              <span class="icon typicons-minus"></span>
+              <span class="icon typicons-times"></span>
+            </div>
+          </header>
+
+          <ol class="discussion">
+            <div class="chat_container">
+              <ul id="messages">
+                <div class="profilepic">
+                </div>
+              </ul>
+            </div>
+            <form class="chat_input" action="">
+              <input id="m" autocomplete="off" /><button>Send</button>
+            </form>
+          </ol>
+        </div>
+
+      </section>
 
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
