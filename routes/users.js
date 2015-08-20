@@ -15,38 +15,34 @@ router.get('/smokn/users', function(req, res, next) {
   })
 });
 
-// GET landing page / log in page
-// router.get('/', sessionsController.renderLoginPage);
-
+// GET landing page
 router.get('/', function(req, res) {
   res.render('landingpage', {user: req.user});
 });
 
 router.get('/login', sessionsController.renderLoginPage);
 
-router.get('/login', function(req, res) {
-  res.render('auth/login', {user : req.user });
-});
 
-// Login user
-// router.post('/',
-//   passport.authenticate('local',
-//   {
-//     failureRedirect: '/'
-//   }),
-//   sessionsController.loginUser);
+
+// router.post('/login', passport.authenticate(
+//  'local',
+//  {
+//    failureRedirect: '/login'
+//  }),
+//  function (req, res, next) {
+//    req.session.save(function (err) {
+//      if (err) return next(err);
+//      res.redirect('/');
+//    });
+//  }
+// );
 
 router.post('/login', passport.authenticate(
  'local',
  {
    failureRedirect: '/login'
  }),
- function (req, res, next) {
-   req.session.save(function (err) {
-     if (err) return next(err);
-     res.redirect('/');
-   });
- }
+ sessionsController.loginUser
 );
 
 
