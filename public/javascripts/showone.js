@@ -16,15 +16,20 @@ url:      "http://localhost:3000/smokn/users",
 dataType: "json",
 })
 .success(function(data) {
-  var oneUser = data.filter(function(user){
+  var userlist = data.filter(function(user){
     return user.username === '2';
   })
+
+  console.log(userlist[0].photo_url);
+  var userPhoto = userlist[0].photo_url;
+  // logic to pull random person from array
   // console.log(oneUser[0].photo_url);
   // console.log(oneUser[0]._id);
 
+  $('#userPic').attr('src', $('#userPic').attr('src') + userPhoto);
 
-  $('#userPic').prepend('<img src="http://colinmendelsohn.com.au/files/8413/5806/8663/e-cigarette-smoker.jpg" height="300"/>');
-  $('.potential-smokemate').attr("data-uid", oneUser[0]._id);
+  // $('#userPic').prepend('<img src=userPhoto height="300"/>');
+  $('.potential-smokemate').attr("data-uid", userlist[0]._id);
 })
 .fail(function(err) {
   console.log(err);

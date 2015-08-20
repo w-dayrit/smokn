@@ -7,36 +7,33 @@
 
     <% include ../partials/nav %>
     <p><%= title %></p>
-      <div class="other-users" data-current-uid="91oeijf934fjp39ifjef">
-        <div class="potential-smokemate" data-uid="9u449u5495u2495u43">
-        <% users.forEach(function(user){ %>
-          <div>
-            <img src=<%= user.photo_url %>>
+
+
+    <div data-current-uid=<%= user._id %>
+      data-current-pref=<%= user.matchPreference[0] %><%= user.matchPreference[1] %><%= user.matchPreference[2] %>>
+      <div class="other-users" style="text-align: center;">
+        <div class="potential-smokemate" style="
+            border: 1px solid black;
+            display: inline-block;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: center;">
+            <img id="userPic" src="">
+            <br>
+            <button style="clear: both;" data-status="dislike">
+            thumbs down
+            </button>
+
+            <button data-status="pending">
+            Like
+            </button>
           </div>
-          <div class="smokemate-text">
-            <%= user.username %>,
-            <%= new Date().getFullYear() - new Date (user.birthday).getFullYear() %> Years Old
-          </div>
-<!--           <div class="smokemate-text-two">
-            <p>
-              <br>
-              Type:
-              <%= user.type %>
-              <br><br>
-              Description:
-              <%= user.userDescription %>
-            </p>
-          </div> -->
-          <div class="button-wrapper">
-            <input class="nocig" type="image" src="/images/nocig.jpg" data-status="dislike">
-            </input>
-            <input class="yescig" type="image" src="/images/cigyes.jpg" data-status="pending">
-            </input>
-          </div>
-          </div>
-          <% }); %>
-        </div>
       </div>
+    </div>
+
+
+
+    <script src="../javascripts/showone.js"></script>
 
   </body>
 </html>
