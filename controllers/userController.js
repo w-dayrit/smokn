@@ -5,28 +5,28 @@ var User = require('../models/User');
 // GET '/' - renders index page
 module.exports.renderUserIndex = function(req, res, next) {
   User.find({}, function(err, users){
-    res.render('users/index', {title: 'SMOKN', users: users, user: req.user});
+    res.render('users/index', {users: users, user: req.user});
   })
 };
 
 
 module.exports.renderUserNew = function(req, res, next) {
-  res.render('auth/new', {title: 'SMOKN', user: req.user});
+  res.render('auth/new', {user: req.user});
 };
 
 module.exports.renderUserShow = function(req, res, next) {
   User.findById(req.params.id, function(err, user) {
-    res.render('users/show', {title: 'SMOKN', user: req.user});
+    res.render('users/show', {user: req.user});
   });
 };
 
 module.exports.renderAbout = function(req, res, next) {
-  res.render('users/about', {title: 'About SMOKN', user: req.user});
+  res.render('users/about', {user: req.user});
 };
 
 module.exports.renderUserEdit = function(req, res, next) {
   User.findById(req.params.id, function(err, user) {
-    res.render('users/edit', {title: 'SMOKN', user: req.user});
+    res.render('users/edit', {user: req.user});
   });
 };
 
