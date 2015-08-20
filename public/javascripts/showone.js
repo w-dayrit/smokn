@@ -19,8 +19,8 @@ dataType: "json",
   var oneUser = data.filter(function(user){
     return user.username === '2';
   })
-  console.log(oneUser[0].photo_url);
-  console.log(oneUser[0]._id);
+  // console.log(oneUser[0].photo_url);
+  // console.log(oneUser[0]._id);
 
 
   $('#userPic').prepend('<img src="http://colinmendelsohn.com.au/files/8413/5806/8663/e-cigarette-smoker.jpg" height="300"/>');
@@ -32,14 +32,14 @@ dataType: "json",
 
 
 // Creates Match object with hidden data, POSTs to Matches API
-$dislike = $('body > div.other-users > div > button:nth-child(3)');
+$dislike = $('body > div > div.other-users > div > button:nth-child(3)');
 
 $dislike.on('click', function(e) {
   // console.log($(this).data('status'));
   // console.log($(this).parent().data('uid'));
-  console.log($(this).parent().parent().data('current-uid'));
+  // console.log($(this).parent().parent().parent().data('current-uid'));
 
-  var userOne = $(this).parent().parent().data('current-uid');
+  var userOne = $(this).parent().parent().parent().data('current-uid');
   var userTwo = $(this).parent().data('uid');
   var status = $(this).data('status');
 
@@ -64,10 +64,10 @@ $dislike.on('click', function(e) {
 });
 
 
-$like = $('body > div.other-users > div > button:nth-child(4)');
+$like = $('body > div > div.other-users > div > button:nth-child(4)');
 
 $like.on('click', function(e) {
-  var userOne = $(this).parent().parent().data('data-current-uid');
+  var userOne = $(this).parent().parent().parent().data('current-uid');
   var userTwo = $(this).parent().data('uid');
   var status = $(this).data('status');
 

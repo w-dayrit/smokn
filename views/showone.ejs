@@ -7,28 +7,29 @@
 
   <div class="container">
   </div>
+
     <div data-current-uid=<%= user._id %>
-      data-current-pref1=<%= user.matchPreference[0] %><%= user.matchPreference[1] %><%= user.matchPreference[2] %>>
-    </div>
-    <div class="other-users" style="text-align: center;">
-      <div class="potential-smokemate" style="
-          border: 1px solid black;
-          display: inline-block;
-          padding: 20px;
-          margin: 0 auto;
-          text-align: center;">
-          <div id="userPic">
+      data-current-pref=<%= user.matchPreference[0] %><%= user.matchPreference[1] %><%= user.matchPreference[2] %>>
+      <div class="other-users" style="text-align: center;">
+        <div class="potential-smokemate" style="
+            border: 1px solid black;
+            display: inline-block;
+            padding: 20px;
+            margin: 0 auto;
+            text-align: center;">
+            <div id="userPic">
 
+            </div>
+            <br>
+            <button style="clear: both;" data-status="dislike">
+            thumbs down
+            </button>
+
+            <button data-status="pending">
+            Like
+            </button>
           </div>
-          <br>
-          <button style="clear: both;" data-status="dislike">
-          thumbs down
-          </button>
-
-          <button data-status="pending">
-          Like
-          </button>
-        </div>
+      </div>
     </div>
 
 
