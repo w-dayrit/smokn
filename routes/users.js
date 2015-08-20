@@ -73,6 +73,9 @@ router.get('/users/:id/edit', userController.renderUserEdit);
 // edit user info
 router.put('/users/:id', userController.editUser);
 
+// delete user profile
+router.delete('/users/:id', userController.deleteUser);
+
 router.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/');

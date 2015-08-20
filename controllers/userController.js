@@ -33,6 +33,12 @@ module.exports.renderUserEdit = function(req, res, next) {
   });
 };
 
+module.exports.deleteUser = function(req, res, next) {
+  User.findByIdAndRemove(req.params.id, function(err, user) {
+    res.redirect('/');
+  });
+};
+
 //change routes, render profile page after revisions. (save to profile and return to profile)
 //CM redirects to show but doesn't update in db
 // module.exports.renderUserUpdate = function(req, res, next) {
@@ -100,11 +106,11 @@ module.exports.editUser = function(req, res, next) {
   });
 };
 
-module.exports.deleteUser = function(req, res, next) {
-  var user = req.user;
-  user.remove(function (err) {
-    req.flash('info', 'deleted profile');
-    res.redirect('/');
-  });
-};
+// module.exports.deleteUser = function(req, res, next) {
+//   var user = req.user;
+//   user.remove(function (err) {
+//     req.flash('info', 'deleted profile');
+//     res.redirect('/');
+//   });
+// };
 
