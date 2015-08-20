@@ -6,6 +6,10 @@ var Match = function(userOne, userTwo, status) {
   this.status  = status;
 };
 
+// var function = isUserPreferred(user) {
+//   if(user.)
+// }
+
 $.ajax({
 method:   "GET",
 url:      "http://localhost:3000/smokn/users",
@@ -33,7 +37,7 @@ $dislike = $('body > div.other-users > div > button:nth-child(3)');
 $dislike.on('click', function(e) {
   // console.log($(this).data('status'));
   // console.log($(this).parent().data('uid'));
-  // console.log($(this).parent().parent().data('current-uid'));
+  console.log($(this).parent().parent().data('current-uid'));
 
   var userOne = $(this).parent().parent().data('current-uid');
   var userTwo = $(this).parent().data('uid');
@@ -63,7 +67,7 @@ $dislike.on('click', function(e) {
 $like = $('body > div.other-users > div > button:nth-child(4)');
 
 $like.on('click', function(e) {
-  var userOne = $(this).parent().parent().data('current-uid');
+  var userOne = $(this).parent().parent().data('data-current-uid');
   var userTwo = $(this).parent().data('uid');
   var status = $(this).data('status');
 
