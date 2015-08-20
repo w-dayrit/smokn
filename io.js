@@ -1,4 +1,8 @@
 var io = require('socket.io')();
+var namespace = io.of('/customnamespace')
+namespace.on('connection', function(socket){
+  //proceed as normal
+});
 
 var namespaces = {};
 

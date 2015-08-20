@@ -1,33 +1,81 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <% include ../partials/head %>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/chat.css" />
   </head>
   <body>
     <% include ../partials/nav %>
-    <div class="container">
-      <div class="profileView">
+    <p><%= title %></p>
+    <div class="chat_container">
       <div class="row">
-        <div class="six columns">
-          <img src="<%= user.photo_url %>" width="300" />
-          <h3><%= user.username %></h3>
+        <div class="current-users four columns" data-current-uid="91oeijf934fjp39ifjef">
+          <div class="potential-smokemate" data-uid="9u449u5495u2495u43">
+            <div class="chatbox">
+              <img src=<%= user.photo_url %>>
+            </div>
+            <div class="smokemate-text">
+              <div class="smokemate-text-left">
+                <%= user.username %>
+              </div>
+              <div class="smokemate-text-right">
+                <%= new Date().getFullYear() - new Date (user.birthday).getFullYear() %> Years Old
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="six columns">
-          <%= user.birthday %>
-          <%= user.userDescription %>
-          <%= user.type %>
-          <%= user.gender %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="six columns">
-<!-- link to edit and delete -->
-          <a href="/users/<%= user._id %>/edit">Edit</a>
+        <section class="module">
+          <div class="eleven columns">
+            <header class="top-bar">
+              <div class="left">
+                <span class="icon typicons-message"></span>
+                <h1>Chat</h1>
+              </div>
+
+              <div class="right">
+                <span class="icon typicons-minus"></span>
+                <span class="icon typicons-times"></span>
+              </div>
+            </header>
+
+            <ol class="discussion">
+              <div class="chat_container">
+                <ul id="messages">
+                  <div class="profilepic">
+                  </div>
+                </ul>
+              </div>
+              <form class="chat_input" action="">
+                <input id="m" autocomplete="off" /><button>Send</button>
+              </form>
+            </ol>
+          </div>
+        </section>
+        <div class="other-users four columns" data-current-uid="91oeijf934fjp39ifjef">
+          <div class="potential-smokemate" data-uid="9u449u5495u2495u43">
+            <div class="chatbox">
+              <img src=<%= user.photo_url %>>
+            </div>
+            <div class="smokemate-text">
+              <div class="smokemate-text-left">
+                <%= user.username %>
+              </div>
+              <div class="smokemate-text-right">
+                <%= new Date().getFullYear() - new Date (user.birthday).getFullYear() %> Years Old
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    </div>
+
+
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="../../socket.io/socket.io.js"></script>
+    <script src="../../javascripts/chat.js"></script>
   </body>
 </html>
+
