@@ -76,34 +76,35 @@
   <script>
 
   var me = <%=  user.username %>;
-  var otherUser = <%= otherUser.username %>;
+  var otherUser = <%= user.username %>;
 
-  function getNamespace(me, otherUser) {
-    if( me < otherUser) {
-      return '/' + me + '|' + otherUser;
-    } else {
-      return '/' | otherUser + '|' + me;
-  };
+  console.log(me);
+  // function getNamespace(me, otherUser) {
+  //   if( me < otherUser) {
+  //     return '/' + me + '|' + otherUser;
+  //   } else {
+  //     return '/' | otherUser + '|' + me;
+  // };
 
-  var ns = getNamespace();
+  // var ns = getNamespace();
 
-  var chatSocket = io(ns);
-  var socket = io();
-  socket.emit('register-chat', ns);
+  // var chatSocket = io(ns);
+  // var socket = io();
+  // socket.emit('register-chat', ns);
 
-  chatSocket.on("private-message", function(data) {
-    // update UI with message
-    // ajax API post to chat model
+  // chatSocket.on("private-message", function(data) {
+  //   // update UI with message
+  //   // ajax API post to chat model
 
-  })
+  // })
 
-  function sendMessage (message) {
-    chatSocket.emit("private-message", {
-      sender: me,
-      receiver: otherUser,
-      message: message
-    });
-  };
+  // function sendMessage (message) {
+  //   chatSocket.emit("private-message", {
+  //     sender: me,
+  //     receiver: otherUser,
+  //     message: message
+  //   });
+  // };
 
   // all available client side
   </script>
