@@ -6,9 +6,53 @@ var Match = function(userOne, userTwo, status) {
   this.status  = status;
 };
 
-// var function = isUserPreferred(user) {
-//   if(user.)
+var isFemale = function(user) {
+  return user.userGender === "woman";
+}
+var isMale = function(user) {
+  return user.userGender === "man";
+}
+var isNonBinary = function(user) {
+  return user.userGender === "nonBinary";
+}
+var isFemaleAndMale = function(user) {
+  return user.userGender === "woman" && user.userGender === "man";
+}
+var isFemaleAndNonBinary = function(user) {
+  return user.userGender === "woman" && user.userGender === "nonBinary";
+}
+var isMaleAndNonBinary = function(user) {
+  return user.userGender === "man" && user.userGender === "nonBinary";
+}
+var isAllThree = function(user) {
+  return user.userGender === "man" && user.userGender === "woman" && user.userGender === "nonBinary";
+}
+
+
+
+// var isUserPreferred = function(currentUserPref, user) {
+//   if(currentUserPref === "f") {
+//     return user.userGender === "woman";
+//   } else if (currentUserPref === "m") {
+//     return user.userGender === "man";
+//   } else if (currentUserPref === "x") {
+//     return user.userGender === "nonBinary";
+//   } else if (currentUserPref === "fm") {
+//     return user.userGender === "woman" && user.userGender === "man";
+//   } else if (currentUserPref === "fx") {
+//     return user.userGender === "woman" && user.userGender === "nonBinary";
+//   } else if (currentUserPref === "mx") {
+//     return user.userGender === "man" && user.userGender === "nonBinary";
+//   } else if (currentUserPref === "fmx") {
+//     return user.userGender === "man" && user.userGender === "woman" && user.userGender === "nonBinary";
+//   } else {
+//     alert('Broken function');
+//   }
 // }
+
+var currentUserPref = $('#current-user').data('current-pref');
+
+console.log(currentUserPref);
 
 $.ajax({
 method:   "GET",
@@ -16,15 +60,37 @@ url:      "http://localhost:3000/smokn/users",
 dataType: "json",
 })
 .success(function(data) {
-  var oneUser = data.filter(function(user){
-    return user.username === '2';
-  })
+
+  if(currentUserPref === "f") {
+    var userlist = data.filter(isFemale);
+  } else if (currentUserPref === "m") {
+    var userlist = data.filter(isMale);
+  } else if (currentUserPref === "x") {
+    var userlist = data.filter(isNonBinary);
+  } else if (currentUserPref === "fm") {
+    var userlist = data.filter(isFemaleAndMale);
+  } else if (currentUserPref === "fx") {
+    var userlist = data.filter(isFemaleAndNonBinary);
+  } else if (currentUserPref === "mx") {
+    var userlist = data.filter(isMaleAndNonBinary);
+  } else if (currentUserPref === "fmx") {
+    var userlist = data.filter(isAllThree);
+  } else {
+    alert('Broken function');
+  }
+
+  console.log(userlist);
+
+  var oneUser = userlist.shift();
+
+  console.log(oneUser);
+
+  var userPhoto = oneUser.photo_url;
   // console.log(oneUser[0].photo_url);
   // console.log(oneUser[0]._id);
 
-
-  $('#userPic').prepend('<img src="http://colinmendelsohn.com.au/files/8413/5806/8663/e-cigarette-smoker.jpg" height="300"/>');
-  $('.potential-smokemate').attr("data-uid", oneUser[0]._id);
+  $('#userPic').attr('src', $('#userPic').attr('src') + userPhoto);
+  $('.potential-smokemate').attr("data-uid", oneUser._id);
 })
 .fail(function(err) {
   console.log(err);
@@ -38,6 +104,9 @@ $dislike.on('click', function(e) {
   // console.log($(this).data('status'));
   // console.log($(this).parent().data('uid'));
   // console.log($(this).parent().parent().parent().data('current-uid'));
+
+
+  // logic to check if match is existing
 
   var userOne = $(this).parent().parent().parent().data('current-uid');
   var userTwo = $(this).parent().data('uid');

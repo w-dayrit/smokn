@@ -8,12 +8,14 @@
   </head>
   <body>
     <% include ../partials/nav %>
+    <% include ../partials/slider %>
+
     <p><%= title %></p>
     <div class="chat_container">
       <div class="row">
-        <div class="current-user four columns" data-current-uid="91oeijf934fjp39ifjef">
-          <div class="potential-smokemate" data-uid="9u449u5495u2495u43">
-            <div class="chatbox">
+        <div class="current-user three columns" data-current-uid="91oeijf934fjp39ifjef">
+          <div class="me" data-uid="9u449u5495u2495u43">
+            <div class="profilebox">
               <img src=<%= user.photo_url %>>
             </div>
             <div class="smokemate-text">
@@ -21,13 +23,13 @@
                 <%= user.username %>
               </div>
               <div class="smokemate-text-right">
-                <%= new Date().getFullYear() - new Date (user.birthday).getFullYear() %> Years Old
+                <%= new Date().getFullYear() - new Date (user.birthday).getFullYear() %>
               </div>
             </div>
           </div>
         </div>
         <section class="module">
-          <div class="eleven columns">
+          <div class="chatbox_container">
             <header class="top-bar">
               <div class="left">
                 <span class="icon typicons-message"></span>
@@ -39,38 +41,40 @@
                 <span class="icon typicons-times"></span>
               </div>
             </header>
-
-            <ol class="discussion">
-              <div class="chat_container">
-                <ul id="messages">
-                  <div class="profilepic">
-                  </div>
-                </ul>
-              </div>
+            <div class="chatarea">
+              <ol class="discussion">
+                <div class="chat_container">
+                  <ul id="messages">
+                  </ul>
+                </div>
+              </ol>
+            </div>
+            <div class="inputbox">
               <form class="chat_input" action="">
-                <input id="m" autocomplete="off" /><button>Send</button>
+                <input id="m" autocomplete="off" />
+                <button>Send</button>
               </form>
-            </ol>
+            </div>
           </div>
         </section>
-        <div class="other-user four columns" data-current-uid="91oeijf934fjp39ifjef">
+        <div class="other-user three columns" data-current-uid="91oeijf934fjp39ifjef">
           <div class="potential-smokemate" data-uid="9u449u5495u2495u43">
-            <div class="chatbox">
-              <img src=<%= user.photo_url %>>
-            </div>
             <div class="smokemate-text">
               <div class="smokemate-text-left">
                 <%= user.username %>
               </div>
               <div class="smokemate-text-right">
-                <%= new Date().getFullYear() - new Date (user.birthday).getFullYear() %> Years Old
+                <%= new Date().getFullYear() - new Date (user.birthday).getFullYear() %>
               </div>
+            </div>
+            <div class="profilebox">
+              <img src=<%= user.photo_url %>>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+  <% include ../partials/footer %>
 
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
