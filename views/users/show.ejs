@@ -8,15 +8,17 @@
   </head>
   <body>
     <% include ../partials/nav %>
-    <% include ../partials/slider %>
 
     <p><%= title %></p>
+    <div id="userTwo">
+      <%= user.username %>
+    </div>
     <div class="chat_container">
       <div class="row">
-        <div class="current-user three columns" data-current-uid="91oeijf934fjp39ifjef">
-          <div class="me" data-uid="9u449u5495u2495u43">
+        <div class=" three columns" data-current-uid="">
+          <div class="me" data-uid="">
             <div class="profilebox">
-              <img src=<%= user.photo_url %>>
+              <img src="<%= user.photo_url %>">
             </div>
             <div class="smokemate-text">
               <div class="smokemate-text-left">
@@ -45,6 +47,9 @@
               <ol class="discussion">
                 <div class="chat_container">
                   <ul id="messages">
+                    <% messages.forEach (function(message) { %>
+                      <li><%= message.sender + " > " + message.receiver + ": " + message.message %></li>
+                    <% }); %>
                   </ul>
                 </div>
               </ol>
@@ -52,33 +57,41 @@
             <div class="inputbox">
               <form class="chat_input" action="">
                 <input id="m" autocomplete="off" />
-                <button>Send</button>
+                <button type="submit">Send</button>
               </form>
             </div>
           </div>
         </section>
-        <div class="other-user three columns" data-current-uid="91oeijf934fjp39ifjef">
-          <div class="potential-smokemate" data-uid="9u449u5495u2495u43">
+        <div class="other-user three columns" data-current-uid="">
+          <div class="potential-smokemate" data-uid="">
             <div class="smokemate-text">
-              <div class="smokemate-text-left">
-                <%= user.username %>
+              <div id="userOne" class="smokemate-text-left">
+                <%= userOne.username %>
               </div>
               <div class="smokemate-text-right">
-                <%= new Date().getFullYear() - new Date (user.birthday).getFullYear() %>
+                <%= new Date().getFullYear() - new Date (userOne.birthday).getFullYear() %>
               </div>
             </div>
             <div class="profilebox">
-              <img src=<%= user.photo_url %>>
+              <img src=<%= userOne.photo_url %>>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <% include ../partials/footer %>
 
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+
+
+
     <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
-    <script src="../../socket.io/socket.io.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+
+      var me='<%=  userOne.username %>';
+      var otherUser = '<%= user.username %>';
+
+    </script>
+
     <script src="../../javascripts/chat.js"></script>
   </body>
 </html>

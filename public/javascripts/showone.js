@@ -16,39 +16,18 @@ var isNonBinary = function(user) {
   return user.userGender === "nonBinary";
 }
 var isFemaleAndMale = function(user) {
-  return user.userGender === "woman" && user.userGender === "man";
+  return user.userGender === "woman" || user.userGender === "man";
 }
 var isFemaleAndNonBinary = function(user) {
-  return user.userGender === "woman" && user.userGender === "nonBinary";
+  return user.userGender === "woman" || user.userGender === "nonBinary";
 }
 var isMaleAndNonBinary = function(user) {
-  return user.userGender === "man" && user.userGender === "nonBinary";
+  return user.userGender === "man" || user.userGender === "nonBinary";
 }
 var isAllThree = function(user) {
-  return user.userGender === "man" && user.userGender === "woman" && user.userGender === "nonBinary";
+  return user.userGender === "man" || user.userGender === "woman" && user.userGender === "nonBinary";
 }
 
-
-
-// var isUserPreferred = function(currentUserPref, user) {
-//   if(currentUserPref === "f") {
-//     return user.userGender === "woman";
-//   } else if (currentUserPref === "m") {
-//     return user.userGender === "man";
-//   } else if (currentUserPref === "x") {
-//     return user.userGender === "nonBinary";
-//   } else if (currentUserPref === "fm") {
-//     return user.userGender === "woman" && user.userGender === "man";
-//   } else if (currentUserPref === "fx") {
-//     return user.userGender === "woman" && user.userGender === "nonBinary";
-//   } else if (currentUserPref === "mx") {
-//     return user.userGender === "man" && user.userGender === "nonBinary";
-//   } else if (currentUserPref === "fmx") {
-//     return user.userGender === "man" && user.userGender === "woman" && user.userGender === "nonBinary";
-//   } else {
-//     alert('Broken function');
-//   }
-// }
 
 var currentUserPref = $('#current-user').data('current-pref');
 
@@ -86,11 +65,14 @@ dataType: "json",
   console.log(oneUser);
 
   var userPhoto = oneUser.photo_url;
-  // console.log(oneUser[0].photo_url);
+  console.log(oneUser.photo_url);
   // console.log(oneUser[0]._id);
 
   $('#userPic').attr('src', $('#userPic').attr('src') + userPhoto);
   $('.potential-smokemate').attr("data-uid", oneUser._id);
+  $('#potential-smokemate-name').html(oneUser.username);
+  $('#potential-smokemate-name').attr('href', $('#potential-smokemate-name').attr('href') + 'http://localhost:3000/users/' + oneUser._id);
+
 })
 .fail(function(err) {
   console.log(err);
