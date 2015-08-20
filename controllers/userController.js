@@ -15,8 +15,8 @@ module.exports.renderUserNew = function(req, res, next) {
 };
 
 module.exports.renderUserShow = function(req, res, next) {
-  User.findOne({_id: req.params.id}, function(err, user) {
-    res.render('users/show', {title: 'SMOKN', user: user});
+  User.findOne({_id: req.params.id}, function(err, userTwo) {
+    res.render('users/show', {title: 'SMOKN', user: userTwo, userOne: req.user});
   });
 };
 

@@ -11,15 +11,15 @@
     <% include ../partials/slider %>
 
     <p><%= title %></p>
-    <div id="current-user">
+    <div id="current">
       <%= user.username %>
     </div>
     <div class="chat_container">
       <div class="row">
-        <div class="current-user three columns" data-current-uid="">
+        <div class=" three columns" data-current-uid="">
           <div class="me" data-uid="">
             <div class="profilebox">
-              <img src=<%= user.photo_url %>>
+              <img src="">
             </div>
             <div class="smokemate-text">
               <div class="smokemate-text-left">
@@ -82,10 +82,11 @@
   <!-- Socket IO Chat script -->
   <script>
 
-  var me = <%=  user.username %>;
+  var me = <%=  userOne.username %>;
   var otherUser = <%= user.username %>;
 
   console.log(me);
+  console.log("other:" + otherUser);
   // function getNamespace(me, otherUser) {
   //   if( me < otherUser) {
   //     return '/' + me + '|' + otherUser;
