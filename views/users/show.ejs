@@ -11,10 +11,13 @@
     <% include ../partials/slider %>
 
     <p><%= title %></p>
+    <div id="current-user">
+      <%= user.username %>
+    </div>
     <div class="chat_container">
       <div class="row">
-        <div class="current-user three columns" data-current-uid="91oeijf934fjp39ifjef">
-          <div class="me" data-uid="9u449u5495u2495u43">
+        <div class="current-user three columns" data-current-uid="">
+          <div class="me" data-uid="">
             <div class="profilebox">
               <img src=<%= user.photo_url %>>
             </div>
@@ -57,8 +60,8 @@
             </div>
           </div>
         </section>
-        <div class="other-user three columns" data-current-uid="91oeijf934fjp39ifjef">
-          <div class="potential-smokemate" data-uid="9u449u5495u2495u43">
+        <div class="other-user three columns" data-current-uid="">
+          <div class="potential-smokemate" data-uid="">
             <div class="smokemate-text">
               <div class="smokemate-text-left">
                 <%= user.username %>
