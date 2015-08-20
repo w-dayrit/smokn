@@ -183,7 +183,20 @@
   margin-top: 5%;
 }
 
+.current-user{
+  text-align: center;
+  margin-top: -5%;
+  margin-right: 0;
+}
 
+.other-user{
+  text-align: center;
+  margin-top: -5%;
+  margin-right: 0;
+  bottom: 0;
+  position: absolute;
+  margin-left: 70%;
+}
 
 @keyframes pulse {
   from { opacity: 0; }
