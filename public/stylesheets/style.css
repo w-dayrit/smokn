@@ -207,13 +207,12 @@ div#slider figure {
   padding: 20px;
   margin: 0 auto;
   text-align: center;
-  width: 60%;
   margin-top: 5%;
 }
 
 .potential-smokemate img{
-  height: 50%;
-  width: 50%;
+  height: 300px;
+  width: 500px;
   margin-left: 0;
 }
 
@@ -244,13 +243,21 @@ div#slider figure {
   float: right;
 }
 
-/*.smokemate-text{
+.smokemate-text{
   color: #2B2D42;
   font-size: 30px;
   font-family: 'Oleo Script', Helvetica, sans-serif;
 }
 
-.smokemate-text-two{
+.smokemate-text-left{
+  float: left;
+}
+
+.smokemate-text-right{
+  float: right;
+}
+
+/*.smokemate-text-two{
   font-size: 20px;
   margin-top: 5%;
   background-color: #F0544F;

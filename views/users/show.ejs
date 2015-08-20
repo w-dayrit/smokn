@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,29 +7,25 @@
   </head>
   <body>
     <% include ../partials/nav %>
-    <div class="container">
-      <div class="profileView">
-      <div class="row">
-        <div class="six columns">
-          <img src="<%= user.photo_url %>" width="300" />
-          <h3><%= user.username %></h3>
+    <p><%= title %></p>
+      <div class="other-users" data-current-uid="91oeijf934fjp39ifjef">
+        <div class="potential-smokemate" data-uid="9u449u5495u2495u43">
+          <div>
+            <img src=<%= user.photo_url %>>
+          </div>
+          <div class="smokemate-text">
+            <div class="smokemate-text-left">
+              <%= user.username %>
+            </div>
+            <div class="smokemate-text-right">
+              <%= new Date().getFullYear() - new Date (user.birthday).getFullYear() %> Years Old
+            </div>
+          </div>
+        </div>
+
         </div>
       </div>
-      <div class="row">
-        <div class="six columns">
-          <%= user.birthday %>
-          <%= user.userDescription %>
-          <%= user.type %>
-          <%= user.gender %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="six columns">
-<!-- link to edit and delete -->
-          <a href="/users/<%= user._id %>/edit">Edit</a>
-        </div>
-      </div>
-    </div>
-    </div>
+
   </body>
 </html>
+

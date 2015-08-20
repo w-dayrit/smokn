@@ -1,4 +1,8 @@
 var io = require('socket.io')();
+var namespace = io.of('/customnamespace')
+namespace.on('connection', function(socket){
+  //proceed as normal
+});
 
 io.on('connection', function(socket) {
   console.log('User connected');
