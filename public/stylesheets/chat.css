@@ -32,10 +32,12 @@
 }
 #messages li {
   padding: 10px;
+  text-align: right;
+
 }
 #messages li:nth-child(odd) {
   background: #eee;
-  margin-left: 80%;
+  text-align: left;
 }
 
 .profilepic {
@@ -102,7 +104,8 @@
   list-style: none;
   background: #e5e5e5;
   margin: 0;
-  height: 500px;
+  height: 220px;
+  overflow: scroll;
   li {
     padding: 0.5rem;
     overflow: hidden;
@@ -174,9 +177,40 @@
   }
 }
 
+.chatbox_container{
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 90px;
+  display: inline-block;
+  opacity: 0.8;
+  margin-left: -200px;
+}
+
+.profilebox img{
+    height: 70px;
+  }
+
+.smokemate-text{
+    font-size: 15px;
+  }
+
+.inputbox{
+  background-color: #666;
+}
+
+.inputbox button{
+  margin-top: 5%;
+  background-color: white;
+}
+
+#m{
+  height: 30px;
+  margin-left: -7%;
+  width: 250px;
+}
+
 .chat_input{
   margin-left: 10%;
-  margin-top: 110%;
 }
 
 .chat_container{
@@ -191,12 +225,66 @@
 
 .other-user{
   text-align: center;
-  margin-top: -5%;
+  margin-top: -7%;
   margin-right: 0;
   bottom: 0;
-  position: absolute;
-  margin-left: 70%;
+  margin-left: 54%;
 }
+
+.me{
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10%;
+}
+
+@media (min-width: 1000px){
+  .chatbox_container{
+   width: 750px;
+   height: 80%;
+   margin-left: -100%;
+   margin-top: -10%;
+  }
+  .chatarea{
+   margin-top: 70px;
+  }
+  #m{
+   width: 90%;
+  }
+  .discussion{
+   height: 380px;
+  }
+
+  .profilebox img{
+    height: 100px;
+  }
+  .smokemate-text{
+    font-size: 18px;
+  }
+  .current-user{
+    margin-top: 0;
+  }
+  .potential-smokemate{
+    margin-left: 280px;
+    margin-top: -20%;
+  }
+  .me{
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: -10%;
+  }
+
+  .other-user{
+    text-align: center;
+    margin-top: -8%;
+    margin-right: 0;
+    bottom: 0;
+    margin-left: 54%;
+  }
+
+}
+
 
 @keyframes pulse {
   from { opacity: 0; }
