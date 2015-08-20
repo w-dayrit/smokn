@@ -4,6 +4,6 @@ var chatController = require('../controllers/chatController');
 
 
 // GET chat room
-router.get('/', chatController.showChat);
+router.get('/chat', chatController.showChat);
 
 module.exports = router;
