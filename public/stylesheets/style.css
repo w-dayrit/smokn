@@ -282,3 +282,7 @@ div#slider figure {
   color: white;
 }
 
+iframe {
+  float: right;
+}
+
