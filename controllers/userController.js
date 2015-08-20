@@ -79,23 +79,24 @@ module.exports.renderUserCreate = function(req, res, next) {
 
 module.exports.editUser = function(req, res, next) {
   var id = req.params.id;
-  User.findById(req.params.id, function (err, user) {
+
+  User.findById({_id: id}, function (err, user) {
     if (err) res.json({message: 'could not find user'});
 
-    user.username = req.body.username;
-    user.email = req.body.email;
-    user.userDescription = req.body.userDescription;
-    user.birthday = req.body.birthday;
-    user.userGender = req.body.userGender;
-    user.matchPreference = req.body.matchPreference;
-    user.type = req.body.type;
-    user.photo_url = req.body.photo_url;
+    if (req.body.username) user.username = req.body.username;
+    if (req.body.email) user.email = req.body.email;
+    if (req.body.userDescription) user.userDescription = req.body.userDescription;
+    if (req.body.birthday) user.birthday = req.body.birthday;
+    if (req.body.userGender) user.userGender = req.body.userGender;
+    if (req.body.matchPreference) user.matchPreference = req.body.matchPreference;
+    if (req.body.type) user.type = req.body.type;
+    if (req.body.photo_url) user.photo_url = req.body.photo_url;
 
-    req.user.save(function(err) {
+    user.save(function(err) {
       if (err) {
         return next(err);
       }
-      res.redirect('/users/' + user.id);
+      res.redirect('/users/' + id);
     });
   });
 };
