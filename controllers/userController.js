@@ -1,13 +1,6 @@
 var passport = require('passport');
 var User = require('../models/User');
 
-// module.exports.isLoggedIn = function(req, res, next) {
-//   // if user is authenticated in the session, carry on
-//   if (req.isAuthenticated())
-//     return next();
-//   // if they aren't redirect them to the login page
-//   res.redirect('/login');
-// }
 
 // GET '/' - renders index page
 module.exports.renderUserIndex = function(req, res, next) {
@@ -15,10 +8,6 @@ module.exports.renderUserIndex = function(req, res, next) {
     res.render('users/index', {title: 'SMOKN', users: users, user: req.user});
   })
 };
-
-// module.exports.renderUserIndex = function(req, res, next) {
-//   res.render('users/index', {title: 'SMOKN'});
-// };
 
 
 module.exports.renderUserNew = function(req, res, next) {
@@ -47,23 +36,6 @@ module.exports.deleteUser = function(req, res, next) {
   });
 };
 
-//change routes, render profile page after revisions. (save to profile and return to profile)
-//CM redirects to show but doesn't update in db
-// module.exports.renderUserUpdate = function(req, res, next) {
-//   User.update(
-//       {
-//       email: req.body.email,
-//       userDescription: req.body.userDescription,
-//       birthday: req.body.birthday,
-//       userGender: req.body.userGender,
-//       matchPreference: req.body.matchPreference,
-//       type: req.body.type,
-//       photo_url: req.body.photo_url
-//     }, function(err, user) {
-//     if (err) return res.json({message: 'error:' + err});
-//       res.redirect('/users/show');
-//       })
-//   }
 
 
 module.exports.renderUserCreate = function(req, res, next) {
@@ -84,7 +56,7 @@ module.exports.renderUserCreate = function(req, res, next) {
         if (err) {
           return next(err);
       }
-      res.redirect('/users/' + user.id);
+      res.redirect('/users/index');
       });
     });
   });
@@ -109,16 +81,10 @@ module.exports.editUser = function(req, res, next) {
       if (err) {
         return next(err);
       }
-      res.redirect('/users/' + id);
+      res.redirect('/users/index');
     });
   });
 };
 
-// module.exports.deleteUser = function(req, res, next) {
-//   var user = req.user;
-//   user.remove(function (err) {
-//     req.flash('info', 'deleted profile');
-//     res.redirect('/');
-//   });
-// };
+
 

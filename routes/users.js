@@ -58,7 +58,7 @@ router.post('/users', userController.renderUserCreate);
 router.get('/users/:id', isLoggedIn, userController.renderUserShow);
 
 // render edit user form
-router.get('/users/:id/edit', userController.renderUserEdit);
+router.get('/users/:id/edit', isLoggedIn, userController.renderUserEdit);
 
 // edit user info
 router.put('/users/:id', isLoggedIn, userController.editUser);
