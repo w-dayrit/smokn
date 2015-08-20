@@ -1,5 +1,6 @@
 var passport = require('passport');
 var User = require('../models/User');
+var Message = require('../models/Message');
 
 
 // GET '/' - renders index page
@@ -16,7 +17,11 @@ module.exports.renderUserNew = function(req, res, next) {
 
 module.exports.renderUserShow = function(req, res, next) {
   User.findOne({_id: req.params.id}, function(err, userTwo) {
-    res.render('users/show', {title: 'SMOKN', user: userTwo, userOne: req.user});
+    Message.find({$or: [{$and: [{sender: req.user.username}, {receiver: userTwo.username}]},
+                        {$and: [{sender: userTwo.username}, {receiver: req.user.username}]}]},
+                        function(err, messages) {
+                          res.render('users/show', {title: 'SMOKN', user: userTwo, userOne: req.user, messages: messages});
+                        })
   });
 };
 

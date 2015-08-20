@@ -1,19 +1,39 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-var socket = io();
-console.log(socket);
+  function getNamespace(me, otherUser) {
+    var ns;
+    if( me < otherUser) {
+      ns = '/' + me + '-' + otherUser;
+    } else {
+      ns = '/' + otherUser + '-' + me;
+    };
+    return ns;
+  };
 
-$('form').submit(function(){
-  socket.emit('chat message', $('#m').val());
-  $('#m').val('');
-  return false;
+  var ns = getNamespace(me, otherUser);
+  var socket = io();
+
+  socket.emit('register-chat', ns);
+
+  socket.on('private-message', function(msg){
+    var s = msg.sender + " > " + msg.receiver + ": " + msg.message;
+    $('#messages').append($('<li>').text(s));
+    console.log(msg);
   });
 
-  // socket.on('chat message', function(msg){
-  // $('#messages').append($('<li>').text(msg));
-  // });
+  function sendMessage(message) {
+    console.log(socket);
+    socket.emit("private-message", {
+      sender: me,
+      receiver: otherUser,
+      message: message
+    });
+  };
 
-
-
+  $('form').submit(function(){
+    sendMessage($('#m').val());
+    $('#m').val('');
+    return false;
+  });
 
 })
