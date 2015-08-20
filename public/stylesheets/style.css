@@ -273,12 +273,12 @@ div#slider figure {
   float: right;
 }
 
-/*.smokemate-text-two{
-  font-size: 20px;
-  margin-top: 5%;
-  background-color: #F0544F;
-  width: 70%;
-  height: 70%;
-  margin-left: 15%;
-  border-radius: 20px;
-}*/
+/* Footer */
+
+.footer div{
+  margin-top: 60px;
+  width: 30%;
+  float: left;
+  color: white;
+}
+
