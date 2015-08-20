@@ -82,10 +82,11 @@
         </div>
       </div>
       <button class="button-primary" type="submit" name="action">Update</button>
-      <button class="button-danger" type="submit" name="action">Delete</button>
 </form>
 
-
+<form action="/users/<%= user.id %>?_method=DELETE" method="POST">
+      <button class="button-danger" type="submit" name="action">Delete</button>
+</form>
 
 
       </div>

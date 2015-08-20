@@ -1,6 +1,14 @@
 var passport = require('passport');
 var User = require('../models/User');
 
+// module.exports.isLoggedIn = function(req, res, next) {
+//   // if user is authenticated in the session, carry on
+//   if (req.isAuthenticated())
+//     return next();
+//   // if they aren't redirect them to the login page
+//   res.redirect('/login');
+// }
+
 // GET '/' - renders index page
 module.exports.renderUserIndex = function(req, res, next) {
   User.find({}, function(err, users){
@@ -30,6 +38,12 @@ module.exports.renderAbout = function(req, res, next) {
 module.exports.renderUserEdit = function(req, res, next) {
   User.findById(req.params.id, function(err, user) {
     res.render('users/edit', {title: 'SMOKN', user: req.user});
+  });
+};
+
+module.exports.deleteUser = function(req, res, next) {
+  User.findByIdAndRemove(req.params.id, function(err, user) {
+    res.redirect('/');
   });
 };
 
@@ -100,11 +114,11 @@ module.exports.editUser = function(req, res, next) {
   });
 };
 
-module.exports.deleteUser = function(req, res, next) {
-  var user = req.user;
-  user.remove(function (err) {
-    req.flash('info', 'deleted profile');
-    res.redirect('/');
-  });
-};
+// module.exports.deleteUser = function(req, res, next) {
+//   var user = req.user;
+//   user.remove(function (err) {
+//     req.flash('info', 'deleted profile');
+//     res.redirect('/');
+//   });
+// };
 
