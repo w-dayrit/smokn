@@ -2,36 +2,28 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
   color: #00B7FF;
 }
-
 .label-body {
   margin: 5px;
 }
-
 .centerugh {
   text-align: center;
 }
-
-
 #userPic {
   width: 300px;
   height: auto;
   margin: 10px;
 }
-
 .registerform {
   margin-top: 15%;
 }
-
 .specialuser {
   float: left;
   margin-top: 200px;
 }
 /*cm*/
-
 .landing {
   color: #000000;
   background: #ffffff;
@@ -41,71 +33,33 @@ a {
   margin: 0 auto;
   margin-bottom: 10px;
   margin-top: 20px;
-
-#login {
-  position: absolute;
-  right: 0px;
-  margin-left: 500px;
-  margin-top: 550px;
-
 }
-
-.button {
-    display: inline-block;
-    height: 38px;
-    padding: 0 30px;
-    color: #555;
-    text-align: center;
-    font-size: 11px;
-    font-weight: 600;
-    line-height: 38px;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
-    background-color: #ffffff;
-    border-radius: 4px;
-    border: 1px solid #bbb;
-    cursor: pointer;
-    box-sizing: border-box;
-    .u-pull-right {
-  float: right; }
-}
-
 .button:hover {
   background: #e0e0e0;
   text-decoration: none;
 }
-
 .login {
   margin-top: 30%;
   display: block;
 }
-
 .mycontainer {
   margin: 0 auto;
   margin-top: 30%;
 }
-
 img.intrologo {
   margin: 0 auto;
   height: 200px;
   display: block;
 }
-
 img.navimg {
   margin-top: 5%;
 }
-
 .raleway {
   font-family: 'Raleway', sans-serif;
 }
-
 .likebutton {
   width: 150px;
 }
-
-
 #nav{
   list-style:none;
   font-weight:bold;
@@ -119,15 +73,12 @@ img.navimg {
   margin-bottom: -8%;
   opacity: 0.4;
 }
-
 #nav p{
   font-size: 60px;
   height: 100%;
   float: left;
   margin-top: 0px;
-
 }
-
 #nav li{
   float: right;
   width: 130px;
@@ -137,7 +88,6 @@ img.navimg {
   margin-right: 75px;
   font-size: 20px;
 }
-
 #nav a{
     font-family: 'Raleway', sans-serif;
     display:block;
@@ -148,12 +98,9 @@ img.navimg {
     margin-top: 5px;
     float: right;
 }
-
 #nav a:hover{
     text-decoration: none;
-
 }
-
 #nav ul{
     float: left;
     list-style:none;
@@ -166,7 +113,6 @@ img.navimg {
     width: 100%;
     transition: all 0.5s ease 1s;
 }
-
 #nav:hover ul{
     float: left;
     list-style:none;
@@ -178,8 +124,6 @@ img.navimg {
     height: 350px;
     transition: all 0.5s ease 0s;
 }
-
-
 #nav ul li{
     padding-top:1px;
     float:none;
@@ -187,7 +131,6 @@ img.navimg {
 #nav ul a{
     white-space:nowrap;
 }
-
 #nav li:hover ul{
     left:0;
 }
@@ -198,12 +141,8 @@ img.navimg {
     text-decoration:none;
 }
 #nav li:hover ul li a:hover{
-
 }
-
-
 /* slider */
-
 div#slider {
   width: 1500px;
   max-width: 1500px;
@@ -214,7 +153,6 @@ div#slider {
   background-color: black;
   opacity: 0.5;
 }
-
 div#slider figure {
   position: relative;
   width: 500%;
@@ -223,15 +161,11 @@ div#slider figure {
   font-size: 0;
   text-align: left;
 }
-
 div#slider figure img {
   width: 1500px;
   height: 1000px;
   float: left;
 }
-
-
-
 @keyframes slidy {
   0% { left: 0%; }
   20% { left: 0%; }
@@ -243,25 +177,20 @@ div#slider figure img {
   95% { left: -300%; }
   100% { left: -400%; }
 }
-
 div#slider figure {
   position: relative; width: 500%;
   margin: 0; padding: 0; font-size: 0; left: 0; text-align: left;
   animation: 30s slidy infinite;
 }
-
 /* form */
-
 .login_form {
   position: absolute;
   top: 35%;
   left: 45%;
 }
-
 .columns {
   margin: 0px;
 }
-
 @media (max-width: 480px) {
     .login_form {
         top: 45%;
@@ -271,30 +200,23 @@ div#slider figure {
         background: url(images/background.png) no-repeat center center;
         width: 750px;
         height: 417px;
-
-        margin-top: -208.5px;
+margin-top: -208.5px;
         margin-left: -375px;
     }
 }
-
-
 /* profile view */
-
 .profileView {
   border: 1px solid black;
   position: aboslute;
   margin-top: 20%;
 }
-
 .dropbtn{
   width: 30%;
   float: right;
 }
-
 .chat_container{
   height: 100px;
 }
-
 .footer{
   background: #000;
   padding: 3px;
@@ -304,17 +226,13 @@ div#slider figure {
   margin-bottom: 0;
   height: 10%;
 }
-
 /* Users View */
-
 /* Users/Index */
-
 .other-users{
   text-align: center;
   margin-top: -5%;
   margin-right: 0;
 }
-
 .potential-smokemate{
   display: inline-block;
   padding: 20px;
@@ -322,60 +240,45 @@ div#slider figure {
   text-align: center;
   margin-top: 7%;
 }
-
 .potential-smokemate img{
   height: 100px;
   margin-left: 0;
 }
-
 /*.dislike-button{
   float: left;
   background-color: #00CC00;
 }
-
 .like-button{
   float: right;
   background-color: #6699FF;
 }*/
-
 .button-wrapper{
   margin: 5% 10%;
 }
-
 .button-wrapper input{
   width: 10%;
   height: 10%;
 }
-
 .nocig{
   float: left;
 }
-
 .yescig{
   float: right;
 }
-
 .smokemate-text{
   color: #2B2D42;
   font-size: 15px;
 }
-
 .smokemate-text-left{
   float: left;
 }
-
 .smokemate-text-right{
   float: right;
 }
-
 /* Footer */
-
 .footer div{
   margin-top: 60px;
   width: 30%;
   float: left;
   color: white;
 }
-
-
-
