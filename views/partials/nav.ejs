@@ -8,34 +8,34 @@
 
 <ul id="nav">
   <p>
-    <a href="/"><a href="/"><img src="http://i.imgur.com/q0aqFeo.png" title="source: imgur.com" /></a>  </p>
+    <a href="/"><a href="/"><img src="http://i.imgur.com/q0aqFeo.png" title="logo" /></a>  </p>
 
   <li style= "margin: 0; padding: 0;">
     <a href="#">
-      <img src="/images/menu.png" alt="" style="width: 60px;">
+      <img src="/images/menu.png" class="navimg" style="width: 40px;">
     </a>
 
     <ul>
   <% if ( user ) { %>
-        <li><a href="/">Home</a></li>
+        <li><a href="/">home</a></li>
 
-        <li><a href="/about">About</a></li>
+        <li><a href="/about">about</a></li>
 
-        <li><a href="/users/ + <%= user.id %> + /edit">Edit Profile</a></li>
+        <li><a href="/users/ + <%= user.id %> + /edit">edit profile</a></li>
 
  <!--        <li><a href="#">Previous Matches</a></li> -->
 
-        <li><a href="/logout">Log Out</a></li>
+        <li><a href="/logout">log out</a></li>
 
           <% } else { %>
 
-        <li><a href="/">Home</a></li>
+        <li><a href="/">home</a></li>
 
-        <li><a href="/about">About</a></li>
+        <li><a href="/about">about</a></li>
 
-        <li><a href="/auth/new" class="btn btn-info">Register</a></li>
+        <li><a href="/auth/new" class="btn btn-info">register</a></li>
 
-        <li><a href="/login">Login</a></li>
+        <li><a href="/login">login</a></li>
 
           <% } %>
 
