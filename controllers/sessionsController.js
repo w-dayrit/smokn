@@ -12,3 +12,9 @@ module.exports.loginUser = function(req, res, next) {
   });
 };
 
+module.exports.loginUser = function (req, res, next) {
+  req.session.save(function (err) {
+    if (err) return next(err);
+      res.redirect('/users/index');
+  });
+};
