@@ -5,9 +5,17 @@ var router = express.Router();
 var userController = require('../controllers/userController');
 var sessionsController = require('../controllers/sessionsController');
 
+function isLoggedIn(req, res, next) {
+  // if user is authenticated in the session, carry on
+  if (req.isAuthenticated())
+    return next();
+  // if they aren't redirect them to the login page
+  res.redirect('/login');
+}
+
 
 // GET user api
-router.get('/smokn/users', function(req, res, next) {
+router.get('/smokn/users', isLoggedIn, function(req, res, next) {
   User.find({}, function(err, users) {
     if (err) res.send(err);
 
@@ -22,20 +30,6 @@ router.get('/', function(req, res) {
 
 router.get('/login', sessionsController.renderLoginPage);
 
-
-
-// router.post('/login', passport.authenticate(
-//  'local',
-//  {
-//    failureRedirect: '/login'
-//  }),
-//  function (req, res, next) {
-//    req.session.save(function (err) {
-//      if (err) return next(err);
-//      res.redirect('/');
-//    });
-//  }
-// );
 
 router.post('/login', passport.authenticate(
  'local',
@@ -52,7 +46,7 @@ router.get('/about', userController.renderAbout);
 // USER CRUD FUNCTIONS
 
 // show all the users (or one random user)
-router.get('/users/index', userController.renderUserIndex);
+router.get('/users/index', isLoggedIn, userController.renderUserIndex);
 
 // render new user form
 router.get('/auth/new', userController.renderUserNew);
@@ -61,13 +55,13 @@ router.get('/auth/new', userController.renderUserNew);
 router.post('/users', userController.renderUserCreate);
 
 // show user profile
-router.get('/users/:id', userController.renderUserShow);
+router.get('/users/:id', isLoggedIn, userController.renderUserShow);
 
 // render edit user form
 router.get('/users/:id/edit', userController.renderUserEdit);
 
 // edit user info
-router.put('/users/:id', userController.editUser);
+router.put('/users/:id', isLoggedIn, userController.editUser);
 
 router.get('/logout', function (req, res) {
   req.logout();
