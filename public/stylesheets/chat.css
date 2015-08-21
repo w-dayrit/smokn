@@ -1,5 +1,4 @@
-/*      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }*/
+
 
 
 .chatform {
@@ -180,10 +179,10 @@
 .chatbox_container{
   width: 500px;
   margin: 0 auto;
-  margin-top: 90px;
+  margin-top: -50px;
   display: inline-block;
   opacity: 0.8;
-  margin-left: -200px;
+  /*margin-left: -200px;*/
 }
 
 .profilebox img{
@@ -290,3 +289,4 @@
   from { opacity: 0; }
   to { opacity: 0.5; }
 }
+*/

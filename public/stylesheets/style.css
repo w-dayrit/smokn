@@ -11,6 +11,36 @@ a {
 .centerugh {
   text-align: center;
 }
+#users{
+  position: relative;
+  top: 100px;
+  width: 700px;
+  height: 350px;
+  margin: 0 auto
+}
+
+#receiver {
+  height: 300px;
+  width: 300px;
+  float: left;
+  position: relative;
+}
+
+#sender {
+  height: 300px;
+  width: 300px;
+  float: right;
+  position: absolute;
+}
+
+#chatbox{
+  height: 375px;
+  width: 510px;
+  margin: 0 auto;
+  position: relative;
+  top: 200px;
+}
+
 #userPic {
   width: 300px;
   height: auto;
