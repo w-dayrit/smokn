@@ -80,9 +80,10 @@ dataType: "json",
 
 
 // Creates Match object with hidden data, POSTs to Matches API
-$dislike = $('body > div > div.other-users > div > button:nth-child(3)');
+$dislike = $('body > div > div.other-users > div > button:nth-child(5)');
 
 $dislike.on('click', function(e) {
+  console.log("dislike button works");
   // console.log($(this).data('status'));
   // console.log($(this).parent().data('uid'));
   // console.log($(this).parent().parent().parent().data('current-uid'));
@@ -115,9 +116,11 @@ $dislike.on('click', function(e) {
 });
 
 
-$like = $('body > div > div.other-users > div > button:nth-child(4)');
+$like = $('body > div > div.other-users > div > button:nth-child(6)');
 
 $like.on('click', function(e) {
+  console.log("like button works");
+
   var userOne = $(this).parent().parent().parent().data('current-uid');
   var userTwo = $(this).parent().data('uid');
   var status = $(this).data('status');
